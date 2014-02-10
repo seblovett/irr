@@ -1,0 +1,16 @@
+! Toread.txt created by <+AUTHORNAME+> at Mon 04 Feb 2014 20:44:29 GMT on seblovett-Ubuntu
+! <+Last Edited: Wed 05 Feb 2014 08:08:38 GMT by seblovett on seblovett-Ubuntu +>
+
+S. I. Initiative, Common Power Format (CPF) 1.1 Specification, September, 2008Unified Power Format (UPF 2.0) Standard, IEEE1801 TM: ‘IEEE standard for design and verification of low power integrated circuits’, 27 March, 2009
+
+Mbarek, O., Pegatoquet, A., Auguin, M.: ‘Using unified power format standard concepts for power-aware design and verification of systems-on-chip at transaction level’, IET Circuits Devices Syst., 2012, 6, (5), pp. 287–296
+
+Power System Management Protocol Specifications: http://pmbus.org/specs.html
+
+System Power Management Interface Specification: http://www.mipi.org/specifications/system-power-management-interface
+
+Sheets, M.: ‘Standby power management architecture for deep-submicron systems’. PhD thesis, University of California Berkeley, May 2006 :W
+
+Open SystemC initiative: ‘SystemC transaction level modeling library 2.1.0’, 2009, www.systemc.org
+
+Keating, M., Flynn, D., Aitken, R., Gibbons, A., Shi, K.: ‘Low power methodology manual: for system-on-chip design’, in ‘integrated circuits and systems’ (Springer, 2007) 

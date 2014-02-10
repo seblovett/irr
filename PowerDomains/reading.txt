@@ -1,0 +1,102 @@
+! reading.txt created by seblovett at Mon 03 Feb 2014 19:49:51 GMT
+! <+Last Edited: Wed 05 Feb 2014 08:08:35 GMT by seblovett on seblovett-Ubuntu +>
+
+
+This is a collection of summaries of papers I have read.
+
+
+Power domain management interface: flexible protocol interface for transaction-level power domain management
+============================================================================================================
+Mbarek et al.
+
+
+Low power methods: Power gating, adaptive voltage scaling
+
+"power domain represents a group of blocks that share the same primary supply nets"
+
+Low power standards: Common Power Format (CPF) [1] or IEEE1801 [3] known as Unified Power Format (UPF)
+
+Power Management Unit (PMU) controls each power management element
+
+PMU - static or dynamic. 
+Dynamic strategies incl. scenario tracking or prediction. Needs info of functional and power state of each component
+therefore component need to communicate to PMU. 
+
+Large design dependancy between power-domain-based architecture and PMU operation.
+
+Paper proposes and new power domain management interface for control of power domain states.
+
+Building a structured high-level spec of multi-power domain architecture [5]
+
+Power management can be power controller directed or Operating system directed
+
+Protocol interfaces: 
+	Power management bus (PMBus) [11], 
+		Focuses on transport and physical layer as well as on the command language to communicate with power converters
+	system power management interface (SPMI) [12]
+		defines command set and protocol for power management and control traffic
+both are enhanced I2C. 
+
+Session-based domain power interface defining protocol and signals between domains and manager [13] - only for wireless sensor networks
+
+Conclusion - inter-power-domain protocol interface. platform independent 
+
+[2] S. I. Initiative, Common Power Format (CPF) 1.1 Specification, September, 2008
+
+[3] Unified Power Format (UPF 2.0) Standard, IEEE1801 TM: ‘IEEE standard for design and verification of low power integrated circuits’, 27 March, 2009
+
+[5] Mbarek, O., Pegatoquet, A., Auguin, M.: ‘Using unified power format standard concepts for power-aware design and verification of systems-on-chip at transaction level’, IET Circuits Devices Syst., 2012, 6, (5), pp. 287–296
+
+[11] Power System Management Protocol Specifications: http://pmbus.org/specs.html
+
+[12] System Power Management Interface Specification: http://www.mipi.org/specifications/system-power-management-interface
+
+[13] Sheets, M.: ‘Standby power management architecture for deep-submicron systems’. PhD thesis, University of California Berkeley, May 2006 
+
+
+
+Using unified power format standard concepts for power-aware design and verification of systems-on-chip at transaction level
+----------------------------------------------------------------------------------------------------------------------------
+Mbarek et al 2011
+
+Power management is important
+
+Power gating, adaptive voltage scaling, widely used power management techniques
+
+Partition chip into multiple voltage regions, with own supply [1]
+
+UPF defines power-management architecture (set of domains, power switches supply networks) and strategy (legal system power modes and power transitions) 
+TL models [4] - faster simulations compared to RTL. verify whole system including embedded software
+
+No power aware TL simulator.
+
+Paper presents a generic methodology to augment a TL-model with power including verification capabilities. 
+Early decision making of most energy efficient. 
+Mapping of TL hardware architecture to power one, uses UPF concepts. 
+
+[4] Open SystemC initiative: ‘SystemC transaction level modeling library 2.1.0’, 2009, www.systemc.org
+
+[1] Keating, M., Flynn, D., Aitken, R., Gibbons, A., Shi, K.: ‘Low power methodology manual: for system-on-chip design’, in ‘integrated circuits and systems’ (Springer, 2007) 
+
+
+
+A Method to Evaluate Power Domain Problems in SoC
+-------------------------------------------------
+Cetin and Balasinski 2006
+
+Noise can disturb SoC operation. Coupled with low pin count -> need fewer power domains -> more current draw per domain.
+
+approach to evaluate power domain problems in SoC. Multi-level analysis of distribution of total die power
+
+
+
+New Power-Efficient FPGA Design Combining with Region-Constrained Placement and Multiple Power Domains
+------------------------------------------------------------------------------------------------------
+Ci, Dong, Watanabe 2011
+
+
+
+
+
+
+

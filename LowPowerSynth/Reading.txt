@@ -1,0 +1,59 @@
+! Research.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:01:59 GMT on seblovett-Ubuntu
+! <+Last Edited: Mon 10 Feb 2014 11:10:23 GMT by seblovett on seblovett-Ubuntu +>
+
+Swithching Activity Estimation of FSMs for low power synthesis
+--------------------------------------------------------------
+Kerttu et al.
+
+Switching activity calculated by the probability when in a state that a state bit will switch
+
+Decision Diagram (DD) data structures are used to do this.
+
+Power reduction of 40% - 90% of estimated power dissiplation.
+
+Switching activity is a main contributor to overall power dissiplation [7]
+
+Method for lower power optimisation [5]
+
+Technique in this paper analyses a net-list of an FSM to work out internal switching activities.
+
+Effictient FSM spanning [1]
+Algebraic Decision Diagrams used to allocate state transitions [2] [3]
+
+Significant reduction of power by analysing the FSM by knowing signal properties
+
+[1] G. Cabodi, P. Camurati, and S. Qua. Improving symbolic reachability analysis by means of activity profiles. IEEE Dam. on Comp., 19(9):1065-1075, 2000
+
+[5] P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I .
+
+[7] K. Roy and S. Prasad. Low-Power CMOS VLSI Circuit Design. Wiley Interscience, 2000
+
+
+
+Hierarchical and Multiple-Clock Domain High-Level Synthesis for Low-Power Design of FPGA
+----------------------------------------------------------------------------------------
+Lhairech-Lebreton, Coussy and Martin
+
+Approach looked at slows down the clock fequency in parts of the design,
+decrease the complexity of the clock network
+reduce numbers of long wires,
+clock-gating
+
+low power consumption has been extensively addressed in ASIC [1-6]
+
+FPGA power consumption related to supply, clock frequency and switching activity [7]
+
+Interconnects dominate power consumption, clock networks are a large part too. [8]
+
+FPGAs typically have one clock domain
+
+Clock to F-Fs is always active, even though this isn't needed. 
+
+Reduce power - reduce number of long wires. Multiple Clock domainas and block based architecture.
+
+This paper looks at low power design of DSP on FPGA using clock frequency scaling, and reducing low-level circuit complexity.
+Uses hierarchical high-level synthesis to generate synchronous multiple-clock based architectures. 
+Block-based design reduces long wires.
+
+Needs FPGA structure knowledge at the high level
+[7] C. Piguet “Low Power Electronics Design”, CRC Press, 2005

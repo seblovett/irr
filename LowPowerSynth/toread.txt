@@ -1,0 +1,10 @@
+! toread.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
+! <+Last Edited: Mon 10 Feb 2014 11:10:35 GMT by seblovett on seblovett-Ubuntu +>
+
+G. Cabodi, P. Camurati, and S. Qua. Improving symbolic reachability analysis by means of activity profiles. IEEE Dam. on Comp., 19(9):1065-1075, 2000
+
+P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I .
+
+K. Roy and S. Prasad. Low-Power CMOS VLSI Circuit Design. Wiley Interscience, 2000
+
+C. Piguet “Low Power Electronics Design”, CRC Press, 2005
