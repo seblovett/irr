@@ -1,5 +1,5 @@
 ! toread.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
-! <+Last Edited: Mon 10 Feb 2014 11:10:35 GMT by seblovett on seblovett-Ubuntu +>
+! <+Last Edited: Wed 19 Feb 2014 11:05:48 GMT by seblovett on seblovett-Ubuntu +>
 
 G. Cabodi, P. Camurati, and S. Qua. Improving symbolic reachability analysis by means of activity profiles. IEEE Dam. on Comp., 19(9):1065-1075, 2000
 
@@ -8,3 +8,15 @@ P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techn
 K. Roy and S. Prasad. Low-Power CMOS VLSI Circuit Design. Wiley Interscience, 2000
 
 C. Piguet “Low Power Electronics Design”, CRC Press, 2005
+
+
+
+** Frequency scaling
+http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=5694295&ranges%3D2009_2014_p_Publication_Year%26queryText%3Dlow+power+synthesis
+
+** Clock Gating
+http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=5750276&ranges%3D2009_2014_p_Publication_Year%26queryText%3Dlow+power+synthesis
+
+
+** Voltage domains
+http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=5514933&ranges%3D2009_2014_p_Publication_Year%26queryText%3Dlow+power+synthesis

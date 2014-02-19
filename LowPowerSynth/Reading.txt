@@ -1,5 +1,5 @@
 ! Research.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:01:59 GMT on seblovett-Ubuntu
-! <+Last Edited: Mon 10 Feb 2014 11:10:23 GMT by seblovett on seblovett-Ubuntu +>
+! <+Last Edited: Wed 19 Feb 2014 09:50:42 GMT by seblovett on seblovett-Ubuntu +>
 
 Swithching Activity Estimation of FSMs for low power synthesis
 --------------------------------------------------------------
@@ -57,3 +57,23 @@ Block-based design reduces long wires.
 
 Needs FPGA structure knowledge at the high level
 [7] C. Piguet “Low Power Electronics Design”, CRC Press, 2005
+
+
+
+How to Transform an Architectural Synthesis Tool of Low Power VLSI Designs
+--------------------------------------------------------------------------
+Gailhard et al.
+
+Behavioural and Architectural levels are areas of large power saving.
+
+READ AGAIN
+
+
+Technology Decomposition for Low-Power Synthesis
+------------------------------------------------
+Panda and Najm
+
+Power depends on switching activity. 
+Exact inputs are not known, makes this difficult.
+This paper uses transition density.
+
