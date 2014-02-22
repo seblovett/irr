@@ -1,22 +1,57 @@
 ! toread.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
-! <+Last Edited: Wed 19 Feb 2014 11:05:48 GMT by seblovett on seblovett-Ubuntu +>
+! <+Last Edited: Sat 22 Feb 2014 13:02:22 GMT by hl13g10 on hind.ecs.soton.ac.uk +>
+
+
+P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I . - not on IEE - cannot get
+
+K. Roy and S. Prasad. Low-Power CMOS VLSI Circuit Design. Wiley Interscience, 2000 - not on ieee - cannot get
+
+C. Piguet Low Power Electronics Design, CRC Press, 2005
+
+
+
+** Switching Activity
 
 G. Cabodi, P. Camurati, and S. Qua. Improving symbolic reachability analysis by means of activity profiles. IEEE Dam. on Comp., 19(9):1065-1075, 2000
 
-P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I .
-
-K. Roy and S. Prasad. Low-Power CMOS VLSI Circuit Design. Wiley Interscience, 2000
-
-C. Piguet “Low Power Electronics Design”, CRC Press, 2005
-
-
+Low power logic synthesis under a general delay model - U. Narayanan
 
 ** Frequency scaling
-http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=5694295&ranges%3D2009_2014_p_Publication_Year%26queryText%3Dlow+power+synthesis
+
+Hierarchical and Multiple-Clock Domain High-Level Synthesis for Low-Power Design on FPGA
+
+
 
 ** Clock Gating
-http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=5750276&ranges%3D2009_2014_p_Publication_Year%26queryText%3Dlow+power+synthesis
+Synthesis and comparison of low-power high-throughput architectures for SAD calculation - F.L. Walter
+
+Automatic Register Transfer level CAD tool design for advanced clock gating and low power schemes - Yunlong Zhang
+
+Comparison of optimized multi-stage clock gating with structural gating approach - Xin Man
+
+Clock gating and clock enable for FPGA power reduction - J.P. Oliver
 
 
 ** Voltage domains
-http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=5514933&ranges%3D2009_2014_p_Publication_Year%26queryText%3Dlow+power+synthesis
+Low power design method in high level synthesis with multiple voltages - Chen Wei
+
+
+
+** Voltage scaling
+
+Synthesis techniques for low-power hard real-time systems on variable voltage processors  - I. Hong
+
+
+** Genetic
+
+Genetic synthesis techniques for low-power digital signal processing circuits - T. Arslan
+
+
+** Techniques
+
+Low-power RT-level synthesis techniques: a tutorial - M. Pedram
+
+
+
+
+
