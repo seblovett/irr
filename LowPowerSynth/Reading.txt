@@ -1,5 +1,5 @@
-! Research.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:01:59 GMT on seblovett-Ubuntu
-! <+Last Edited: Sat 22 Feb 2014 13:02:25 GMT by hl13g10 on hind.ecs.soton.ac.uk +>
+! Research.txt created by seblovett at Mon 10 Feb 2014 10:01:59 GMT on seblovett-Ubuntu
+! <+Last Edited: Sun 23 Feb 2014 15:26:24 GMT by seblovett on seblovett-Ubuntu +>
 
 Swithching Activity Estimation of FSMs for low power synthesis
 --------------------------------------------------------------
@@ -76,4 +76,74 @@ Panda and Najm
 Power depends on switching activity. 
 Exact inputs are not known, makes this difficult.
 This paper uses transition density.
+
+
+
+Clock Gating and its application to low power design of sequential circuits
+---------------------------------------------------------------------------
+Qing Wu
+
+Clock signals consume 15-45% of the system power [1]
+
+Other efforts - reduced voltage swings, buffer insertion, clock routing [2]
+
+Circuits now include controllable clocks derived from a master clock
+
+clock gating problem in [3-5]
+Clock stopped into idle modules [3]
+Precomputation based technique to generate a signal to control the enable pin [4]
+latch to gate the clock in control dominated circuits [5]
+
+[1] M. Pedram "Power minimization in IC design: Principles and applications"
+
+[2] G. Friedman "Clock distribution networks in VLSI circuits: An overview"
+
+[3] E. Tellez, A. Farrah, and M. Sarrafzadeh, “Activity-driven clock design for low power circuits,” inProc. IEEE ICCAD, San Jose, CA, Nov. 1995, pp. 62–65.
+
+
+
+Power Minimization in IC Design: Principles and Applications
+------------------------------------------------------------
+M. Pedram
+
+Sources of power dissipation:
+- Leakage current
+- Standby current
+- short-circuit current
+- capacitance current
+
+
+
+Synthesis of clock gating logic through factored form matching
+--------------------------------------------------------------
+Inhak Han
+
+CG is defined in the RTL.
+
+Automatic synthesis not very explored.
+
+CG defined in RTL by designer. 
+
+other approach - automatic synthesis of gating functions from the gate-level netlist [1-4]
+More convenient, even if defined in RTL as can find functions not specified.
+
+Gating function - the function when the clock should be gated
+
+Group ffs with the same gating function.
+Simplification - simplify the function as much as possible (this paper)
+
+Simplification - Use the inverse F' to reduce logic.
+
+Or, utilize the existing logic.
+
+[1] 
+
+[2] 
+
+[3] 
+
+[4] 
+
+
+
 

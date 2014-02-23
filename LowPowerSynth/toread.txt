@@ -1,5 +1,5 @@
-! toread.txt created by <+AUTHORNAME+> at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
-! <+Last Edited: Sat 22 Feb 2014 13:02:22 GMT by hl13g10 on hind.ecs.soton.ac.uk +>
+! toread.txt created by seblovett at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
+! <+Last Edited: Sun 23 Feb 2014 15:26:25 GMT by seblovett on seblovett-Ubuntu +>
 
 
 P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I . - not on IEE - cannot get
