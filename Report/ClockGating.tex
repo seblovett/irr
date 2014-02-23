@@ -1,7 +1,7 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Sun 23 Feb 2014 16:15:11 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Sun 23 Feb 2014 17:31:24 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Clock Gating}
 
@@ -40,13 +40,25 @@ The problem of simplifying the gating function is looked at in \cite{han2012synt
 Here, an algorithm is suggested where the gating function is shared by existing combinational logic.
 This was shown to reduce the logic added by introducing clock gating.
 
-\subsection{Advantages}
+However, sometimes the addition of clock gating is not advantageous. 
+The gating function can be large and therefore can cause timing violations, resulting in an unsuitable synthesis.
+If the gating function is large enough, it can also consume more power than it saves.
+Both of these issues are addressed in \cite{arbel2009resurrection}.
+Here, the author proposed solutions to large gating funcitons by reducing the depth of logic by an approximation. 
+The approximation is made such that the resulting logic does not gate the clock more than the original function. 
+It results in the flip-flop being clocked more often, but reduces the logic so that it can be utilised, thereby saving some power.
 
-Good things about using this.
+\cite{arbel2009resurrection} also proposes the use of a clustering algorithm. 
+The algorithm looks at grouping similar gating functions. 
+This can then reduce the overall logic needed to implement the clock gating and maximise the energy saved.
 
-\subsection{Disadvantages}
+\subsection{Conclusion}
 
-Bad things about using this.
+Clock gating is a simple principle to implement on a small scale.
+The underlying theory is to disable a module when it is not in use.
+This is done by identifying a gating function which disallows clock propagation if the function is asserted.
+
+However, clock gating can produce large gating functions which violate the timing constraints of the circuit, or even consume more power than they save. This results in two problems that need solving - group formation and simplification \cite{han2012synthesis, paik2012clock}.
 
 
 
