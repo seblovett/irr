@@ -1,5 +1,5 @@
 ! Research.txt created by seblovett at Mon 10 Feb 2014 10:01:59 GMT on seblovett-Ubuntu
-! <+Last Edited: Sun 23 Feb 2014 15:26:24 GMT by seblovett on seblovett-Ubuntu +>
+! <+Last Edited: Sun 23 Feb 2014 17:10:35 GMT by seblovett on seblovett-Ubuntu +>
 
 Swithching Activity Estimation of FSMs for low power synthesis
 --------------------------------------------------------------
@@ -136,14 +136,57 @@ Simplification - Use the inverse F' to reduce logic.
 
 Or, utilize the existing logic.
 
-[1] 
+[1] L. Benini  - "Symbolic synthesis of clock-gating logic for power optimization of synchronous controllers"
 
-[2] 
+[2] A.P. Hurst - "Automatic synthesis of clock gating logic with controlled netlist perturbation" 
 
-[3] 
+[3] E. Arbel "Resurrecting infeasible clock gating functions" 
 
-[4] 
-
-
+[4] S. Kim "Pulser gating: a clock gating of pulsed-latch circuits"
 
 
+Clock Gating Synthesis of Pulsed-Latch Circuits
+-----------------------------------------------
+Paik, Han 
+
+
+Clock gating is a standard way of reducing power.
+On RTL or gate level.
+
+Using RTL - load-enable registers are identified and then CG can be applied simply [5]
+Requires designer to specify candidate registers.
+
+Gate level - gating function is automatically synthesised [6-8]. 
+More general and complements the RTL technique.
+
+Problems include identifying groups of clock gated registers
+
+
+
+
+[5] Power Compiler User Guide, Synopsys Inc.
+
+[6] L. Benini Symbolic... (benini1999symbolic)
+
+[7] hurst2008automatic
+
+[8] E. Arbel Resurrecting infeasible clock-gating functions
+
+
+Resurrecting Infeasible clock-gating Functions
+----------------------------------------------
+Eli Arbel
+
+
+Propose two optimization techniques for resurrecting functions not used before due to timing violations or excessive power consumption.
+
+Clock gating is widely used
+reduces dynamic power
+
+some clock gating are not beneficial due to the extra circuitry causing timing violations or consuming too much power. 
+
+1) approximation technique for efficiently reducing the size of clock gating functions 
+2) clustering algorithm for grouping similar clock gating functions
+Produces highly efficient clock gating domains.
+
+Other clock gating algorithms [6, 7, 9, 10, 13, 14, 16]
