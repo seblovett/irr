@@ -1,0 +1,228 @@
+! PowerGating.txt created by seblovett at Sun 16 Mar 2014 15:37:21 GMT on seblovett-Ubuntu
+! <+Last Edited: Sun 16 Mar 2014 21:02:58 GMT by seblovett on seblovett-Ubuntu +>
+
+
+A comparative Analysis of Coarse-grain and Fine-grain Power Gating for FPGA Lookup Tables
+------------------------------------------------------------------------------------------
+Pradeep S. Nair
+
+
+Power gating reduces leakage power
+
+Coarse grain is better than fine grain. 99% and 81% respecitvely vs no gating at all.
+
+
+Leakage power is an area of concern. 
+Caused by undesirable currents flowing through CMOS when they are scaled down.
+Not a problem until smaller than 130nm
+
+Island style FPGAs are prone to leakage.
+
+Looks at leakage of SRAM array of a FPGA LUT, 65nm process.
+
+SRAM in FPGA configures the functionality of the device.
+
+Leakage mechanisms:
+- Sub-threshold leakage
+voltage applied to gate < threshold. 
+leakage current that occues when the transistor is off.
+Gets worse with smaller transistors
+
+- Gate-tunneling
+leakage current between gate and substrate. 
+Worse with decreasing oxide thicknesses 
+
+Fine grain : Each SRAM cell is individually gated.
+Coarse grain : Each SRAM block is gated (16 by 1)
+
+Bit about transistor sizing.
+
+
+Savings of ~67% with power gating on a single cell.
+
+coarse grain ~99% saving
+fine grain ~81% saving
+
+Coarse - can turn off the read / write transistors.
+
+Conclusion - turning everything off makes a better power saving... 
+
+
+
+Enhanced Leakage Reduction Techniques Using Intermediate Strength Power Gating
+------------------------------------------------------------------------------
+Harmander Singh
+
+
+Exponential increase in leakage power 
+
+Novel power gating approach
+
+Multiple sleep modes, savings aroun 17% 
+
+
+V_{th} must be reduced with smaller technologies. 
+Causes subthreshold current to increase, exponentially dependant on V_{th} [2]
+Gate tunneling also increases with thinner oxides [1]
+
+Each technology generation results in 30 times increase in gate leakage [3]
+
+Sleep transistors are added between power rails and module to supress leakage currents in standby mode [4,5]
+
+However, when the module is powered up, large penalty in charging ciruit [11]
+
+Ground bounce also an issue [12,13]
+
+Multiple sleep modes manages the compromise between leakage currents and wake up time.
+
+Circuit for intermediate power saving mode [14]
+
+This paper - power gating circuit that supports operation in multiple intermediate sleep modes.
+Each mode represents a different tradeoff between wake-up overhead and leakage savings.
+
+Proposed circuit controls the steady-state virtual ground rail potential by modulating the footer transistor.
+Different subtheshold gate voltages, causing different Virtual ground levels. 
+Lower Virtual ground - less discharge = quicker wake up but more leakage.
+
+
+
+[1] ITRS, “International technology roadmap for semiconductors,” 2005. [Online]. Available: http://public.itrs.net
+
+[2] S. Borkar, “Design challenges of technology scaling,” IEEE Micro, vol. 19, no. 4, pp. 23–29, Jul./Aug. 1999.
+
+[3] K. Bernstein et al., “Design and CAD challenges in sub-90 nm CMOS technologies,” in Proc. Int. Conf. Comput.-Aided Des., 2003, pp. 129–136.
+
+[4] K. Bernstein et al., “Design and CAD challenges in sub-90 nm CMOS technologies,” in Proc. Int. Conf. Comput.-Aided Des., 2003, pp. 129–136.
+
+[5] J. Tschanz et al., “Dynamic sleep transistor and body-bias for active leakage power control of microprocessors,” in Proc. Int. Solid-State Circuits Conf., 2003, pp. 1838–1845
+
+[11]  A. Abdollahi, F. Fallah, and M. Pedram, “An effective power mode transition technique in MTCMOS circuits,” in Proc. ACM/IEEE Des. Autom. Conf., 2005, pp. 37–42.
+
+[12] S. Kim, S. Kosonocky, and D. Knebel, “Understanding and minimizing ground bounce during mode transistion of power gating structures,” in Proc. Int. Symp. Low Power Electron. Des., 2003, pp. 22–25.
+
+[13] Y. Chang, S. K. Gupta, and M. A. Breuer, “Analysis of ground bounce in deep sub-micron circuits,” inProc. 15th IEEE VLSI Test Symp., 1997, pp. 110–116.
+
+* [14] S. Kim, S. Kosonocky, D. Knebel, and K. Stawiasz, “Experimental measurement of a novel power gating structure with intermediate power saving mode,” in Proc. Int. Symp. Low Power Electron. Des., 2004, pp. 20–25.
+
+
+
+Power gating design for standard-cell-like structured ASICs
+-----------------------------------------------------------
+Sin-Yu Chen
+
+
+Structured ASIC used to bridge the power, performance, area and design cost gaps between ASIC and FPGA
+
+As technology scales, leakage becomes a problem.
+
+Power gating is a common method.
+
+Fine grained power gating yeilds 52% leakage power reduction with 8% area and 17% delay overheads
+
+Via-configurable logic blocks (VCLB) methodology, reduce costs compared to ASIC
+
+VCLB architecture employs dual supply voltages and gate sizing to reduce structured ASIC dynamic power. 
+
+Need to control leakage power, but have no control of the transistors.
+
+Power gating is effective [21-28]
+
+Power gating
+Header / footer switches.
+Fine grained - cells are gated
+Coarse - modules are gated
+
+Clusters: power gated cells connected together -> transistor network
+
+
+[21] A. Sathanur, L. Benini, A. Macii., E. Macii, and M. Poncino, "Multiple power-gating domain (Multi-VGND) architecture for improved leakage power reduction," in ISLPED, pp. 11–13., 2008. 
+
+[22] J. Kao, S. Narendra, and A. Chandrakasan, "MTCMOS hierarchical sizing based on mutual exclusive discharge patterns," DAC, pp. 495-500, 1998. 
+
+[23] K. Shi and D. Howard, "Sleep transistor design and implementation – simple concepts yet challenges to be optimum," in VLSI DAT, pp. 1-4, 2006 
+
+[24] V. Khandelwal and A. Srivastava, "Leakage control through fine-grained placement and sizing of sleep transistors," ICCAD, pp. 533 – 536, 2004. 
+
+[25] Y. Wang, Y. Liu, R. Luo, H. Yang, and H. Wang, "Two-phase fine-grain sleep transistor insertion technique in leakage critical circuits," ISLPED, pp. 238 – 243, 2006. 
+
+[26] C. Long and L. He, "Distributed sleep transistor network for power reduction," IEEE TVLSI, pp. 937 – 946, 2004. 
+
+[27] D. S. Chiou, S. H. Chen, S.C. Chang, and C. Yeh, "Timing driven power  gating," DAC, pp. 121 – 124, 2006. 
+
+[28] L. Guo, Y. Cai, Q. Zhou, L. Kang, and X. Hong, "A novel performance driven power gating based on distributed sleep ransistor network,"  GLSVLSI, pp. 255-260, 2008.
+
+
+
+An FPGA Architecture supporting dynamically controlled power gating
+-------------------------------------------------------------------
+A.A.M. Bsoul
+
+Leakage power is important in <90nm technologies on FPGAs
+
+Power gating has been shown to reduce leakage power.
+
+Paper proposes a modificaion to the fabric of an FPGA to enable dynamically controlled power gating, in which logic clusters can be selectively powered down during run time. 
+
+
+``Dynamic power is dissipated in a circuit when it performs actively. 
+Leakage power is dissipated when the circuit is idle''
+
+Leakage power ~22% of power in 90nm FPGA. [6]
+
+Effective way to reduce power - power gating [7]
+
+Performance loss may result due to extra resistance that power switches add.
+
+* has illustration of basic power gating
+
+[6] (2005, August) Stratix II vs. Virtex-4 Power Comparison & Estimation Accuracy. Altera Corp. white paper WP-S20805-01 (v1.0). Altera Corp. [Online]. Available: www.altera.com/literature/wp/wp_s2v4_pwr_acc.pdf
+
+[7] S. Henzler, Power Management of Digital Circuits in Deep Sub-Micron CMOS Technologies (Springer Series in Advanced Microelectronics). Secaucus, NJ, USA: Springer-Verlag New York, Inc., 2007.
+
+
+A Power Gating GALS Interface Implementation
+--------------------------------------------
+A. Rajakumari
+
+
+GALS - syncronous blocks may need to wait a long time for data from another block. 
+Power gate to reduce leakage.
+
+Asynchronous offers more advantages of higher performance and low power dissipation to synchronous [1,2,3,4]
+
+Async not used due to lack of tools [6]
+
+GALS is a good compromise
+
+Power gating uses sleep transistors
+
+[1] I.E Sutherland and J. Ebergen, “Computers without Clocks”, Scientific American, Agust 2002, PP. 62-69. 
+
+[2] A. Davis and S.M. Nowick, “An Introduction to Asynchronous circuit Design”, Techinical Report, UUCS-97-013, Computer Science Department, University of Utah, Sep 1997. 
+
+[3] S. Hank, “Asynchronous design methodologies: an overview”, proceedings of the IEEE, Vol.83, Issue 1, Jan 1995, pp.69-93. 
+
+[4] A. Bink and Mark de Clercq, “ARM996HS Synthesizable CPU with Clockless Technology”, Information Quarterly, Vol.5, No.4,2006,pp.20-24. 
+
+[6] C. J. Chen, W. M. Cheng "A Quasi-Delay-Insensitive Microprocessor Core Implementation for Microcontrollers"
+
+
+
+Experimental Measurement of a novel power gating structure with intermediate power saving mode
+----------------------------------------------------------------------------------------------
+Suhwan Kim
+
+Uses 130nm technology
+
+has a middle power mode
+
+Leakage current is dominant component of total power dissipation [1,2]
+
+Adds a single PFET in parallel with NMOS footer switch
+
+Has RUN, PARK and COLD states 
+
+
+
+
+1,2
