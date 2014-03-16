@@ -1,0 +1,39 @@
+! PowerDoms.txt created by seblovett at Sat 15 Mar 2014 19:43:23 GMT on seblovett-Ubuntu
+! <+Last Edited: Sat 15 Mar 2014 20:25:11 GMT by seblovett on seblovett-Ubuntu +>
+
+
+Low power design method in high level synthesis with multiple voltages
+----------------------------------------------------------------------
+Chen Wei
+
+
+Floor planning with regard to interconnects, level shifters and power domains.
+
+
+
+
+Hierarchical power network synthesis for multiple power domain designs
+----------------------------------------------------------------------
+Chieh-Jui Lee
+
+Optimize the power network
+
+
+
+
+Leveraging rule-based designs for automatic power domain partitioning
+---------------------------------------------------------------------
+A. Agarwal
+
+
+High level design description to automatically generate a collection of power domains
+
+
+
+Power domain management interface: flexible protocol interface for transaction-level power domain management
+------------------------------------------------------------------------------------------------------------
+O Mbarek
+
+Power domain management strategies.
+
+

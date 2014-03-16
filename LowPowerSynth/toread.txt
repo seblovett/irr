@@ -1,5 +1,5 @@
 ! toread.txt created by seblovett at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
-! <+Last Edited: Sun 23 Feb 2014 15:26:25 GMT by seblovett on seblovett-Ubuntu +>
+! <+Last Edited: Sat 15 Mar 2014 20:01:35 GMT by seblovett on seblovett-Ubuntu +>
 
 
 P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I . - not on IEE - cannot get
@@ -53,5 +53,12 @@ Low-power RT-level synthesis techniques: a tutorial - M. Pedram
 
 
 
+** Clock Domains
+Hierarchical and Multiple-Clock Domain High-Level Synthesis for Low-Power Design on FPGA - Lhairech-Lebreton, G.
 
 
+** Other, worth reading. Doesn't fit but seems interesting. 
+Synthesis of power efficient systems-on-silicon - Kirovski, D.
+
+** This one has lots of everything - bit like what mine is! #ReferenceMining.
+Power Reduction Techniques and Flows at RTL and System Level - Mathur, A.

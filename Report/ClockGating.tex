@@ -1,7 +1,7 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Sun 23 Feb 2014 17:31:24 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Mon 10 Mar 2014 10:03:40 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Clock Gating}
 
@@ -43,12 +43,12 @@ This was shown to reduce the logic added by introducing clock gating.
 However, sometimes the addition of clock gating is not advantageous. 
 The gating function can be large and therefore can cause timing violations, resulting in an unsuitable synthesis.
 If the gating function is large enough, it can also consume more power than it saves.
-Both of these issues are addressed in \cite{arbel2009resurrection}.
+Both of these issues are addressed in \cite{arbel2009resurrecting}.
 Here, the author proposed solutions to large gating funcitons by reducing the depth of logic by an approximation. 
 The approximation is made such that the resulting logic does not gate the clock more than the original function. 
 It results in the flip-flop being clocked more often, but reduces the logic so that it can be utilised, thereby saving some power.
 
-\cite{arbel2009resurrection} also proposes the use of a clustering algorithm. 
+\cite{arbel2009resurrecting} also proposes the use of a clustering algorithm. 
 The algorithm looks at grouping similar gating functions. 
 This can then reduce the overall logic needed to implement the clock gating and maximise the energy saved.
 
