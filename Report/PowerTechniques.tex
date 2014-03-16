@@ -1,10 +1,24 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Sun 16 Mar 2014 15:12:03 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Sun 16 Mar 2014 21:05:17 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
+
+
+
+Leakage currents begin to occur in sub-micron technologies, typically lower than 100nm \cite{bsoul2010fpga, nair2009comparative}.
+With each technology generation, gate leakage increases 30 fold \cite{bernstein2003design}.
+Leakage currents can are identified as two sources - subthreshold currents and gate tunnelling. 
+Subthreshold currents occur when the voltage applied to the gate is lower than the transistor threshold voltage. 
+The channel of the transistor during weak inversion still allows some current to flow from source to drain.
+This current is the subthreshold current an occurs when the transistor is off and is also exponentially dependant on $V_{th}$ \cite{borkar1999design}.
+Gate tunnelling currents increase with thinner oxide layer \cite{m2002international}. 
+A thin oxide results in electrons being able to pass through the gate into the substrate of the transistor. 
+This thin gate results in electrons passing through it, into the circuit causing leakage. 
+Gate tunnelling occurs when the transistor is active \cite{nair2009comparative}.
+
 
 \subsubsection{Theory}
 
@@ -32,6 +46,14 @@ This can then cause issues as state retention may be necessary, as well as low p
 The solution is to use a state retention register. 
 There is a timing overhead involved to store the register before putting the device to sleep, disabling the majority of the circuit. 
 State retention registers also require an individual power supply, meaning all power gated modules require two supplies; one which is gated and one constant supply.
+
+The final aspect of power gating that needs addressing is the power management.
+The power manager is responsible for when to turn the module on and off.
+As well as the control of the sleep transistors, the power manager is also responsible for the stopping the clock, clamping the outputs and saving the state to the state retention mechanism.
+
+There is a large overhead in the additional circuitry needed for power gating. 
+The main increase are the state retention registers as these can require 10\% more area in silicon \citeneeded. 
+When footer switches are used, the voltage that at the source of the NMOS is known as the virtual ground (VGND). When the footer is active, VGND $\approx$ GND. When off, VGND $\approx V_{dd}$.
 A full realisation of a power gated circuit is shown in figure \ref{fig:powergated}. 
 
 
@@ -42,10 +64,57 @@ A full realisation of a power gated circuit is shown in figure \ref{fig:powergat
 \end{figure}
 
 
-\subsection{Synthesis Techniques}
+\subsubsection{Synthesis Techniques}
+
+Fine and coarse grain techniques
+Power gating can be split into two techniques, fine and coarse grain.
+Fine grain gating is where individual cells (e.g. in ASIC) have their own gating transistor. 
+Coarse grain techniques are where gating transistors are applied on a larger module scale.
+\cite{nair2009comparative} compares the fine grain and coarse grain methods on a 65nm FPGA technology. 
+Here, a SRAM block is used as the test circuit. 
+Fine grain, in this case, is where the memory of each cell is individually gated, and coarse is where a $16 \times 1$ SRAM module is gated. 
+It was conclusively shown that coarse grain gating reduced power consumption more than fine grain due to being able to turn off the read/write circuitry. 
 
 
+%Multi sleep mode
+When deciding to sleep a module, there are a number of overheads.
+Due to the charging / discharging of the gated circuit (depending on the use of header or footer switches), when the circuit is re-enabled, there is an amount of time needed to allow the capacitors to return to normal \cite{abdollahi2005effective}.
+This is referred to as the wake-up time and can also include the time to restore state if applicable.
+The (dis)charging can also poses ground bounce issues to the device due to the sudden draw of current, \cite{kim2003understanding,chang1997analysis}. 
 
+This wake up time can then impact the performance of the device - if more energy is consumed waiting for the disabled module than it would have consumed being awake, the overall power is not reduced.
+\cite{kim2004experimental} discusses a method where an intermediate power saving mode is introduced.
+This is done by using a standard footer power gating NMOS. 
+An extra PMOS is then added in parallel with the power gating switch. 
+Table \ref{tab:kim} summarises the states of the transistors in the circuit in figure \ref{fig:kim}
+
+The RUN and COLD states operate as previously discussed. 
+The PARK state, however, is where the virtual ground voltage does not rise to $V_{dd}$ due to the PMOS conducting. 
+The virtual ground is at the threshold voltage of the PMOS, so the leakage current is less than in the RUN state, but not so high that state retention is needed. 
+This drastically reduces the wake up overhead of the circuit. 
+
+\begin{figure}
+\missingfigure{\cite{kim2004experimental} power states circuit}
+\caption{Middle power state implementation used in \cite{kim2004experimental}}
+\label{fig:kim}
+\end{figure}
+
+\begin{table}
+\caption{Power saving modes of \cite{kim2004experimental}}
+\label{tab:kim}
+\centering
+\begin{tabular}{|c|c|c|c|}\hline
+State Name & NMOS State & PMOS State & Virtual Ground Voltage (V)\\ \hline
+RUN  & ON   & OFF  & GND \\
+COLD & OFF  & OFF  & $V_{DD}$ \\
+PARK & OFF  & ON   & $V_{th}$ PMOS \\ \hline
+\end{tabular}
+\end{table}
+
+A further improvement to this single extra state is proposed in \cite{singh2007enhanced}. 
+Here, multiple intermediate power states are implemented by using different subthreshold gate voltages on the NMOS footer switch. 
+The compromise of wake up time against leakage reduction can then be more finely controlled to best suit the circuit.
+In general, the closer the virtual ground is to ground, the more leakage current occurs, but a faster wake up is available. 
 
 \subsection{Power Scaling}
 
