@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Sun 16 Mar 2014 10:06:23 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Sun 16 Mar 2014 15:12:03 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -13,9 +13,9 @@ By doing this, the module does not consume any power.
 It can be achieved by using either a header or a footer switch to disable either the supply connection or the ground connection. 
 Figure \ref{fig:powerswitches} shows the realisation of the power gating circuits.
 
-\begin{figure}
-\includegraphics{headfootswitchs.pdf}
-\caption{Use of header and footer transistors to disable a module}
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{Figures/powergating_switches.pdf}
+\caption{Circuit diagrams showing the use of footer switches (left) or header switches (right).}
 \label{fig:powerswitches}
 \end{figure}
 
@@ -31,13 +31,13 @@ By removing the power to the sequential logic, the state is lost.
 This can then cause issues as state retention may be necessary, as well as low power.
 The solution is to use a state retention register. 
 There is a timing overhead involved to store the register before putting the device to sleep, disabling the majority of the circuit. 
-State retention registers also require an individual power supply, meaning all power gated modules require two supplies.
+State retention registers also require an individual power supply, meaning all power gated modules require two supplies; one which is gated and one constant supply.
 A full realisation of a power gated circuit is shown in figure \ref{fig:powergated}. 
 
 
 \begin{figure}
-\includegraphics{powergated.pdf}
-\caption{Full realisation of a power gated circuit}
+\includegraphics[width=0.5\textwidth]{Figures/powergating_full.pdf}
+\caption{The relaisation of a power gated module. State retention, isolation and a power manager are all needed}
 \label{fig:powergated}
 \end{figure}
 
