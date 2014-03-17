@@ -1,7 +1,7 @@
 %  Introduction.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Wed 19 Feb 2014 09:02:42 GMT
-%  <+Last Edited: Sun 16 Mar 2014 16:02:44 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Mon 17 Mar 2014 11:19:23 GMT by seblovett on seblovett-Ubuntu +>
 
 
 \section{Introduction}
@@ -11,12 +11,17 @@ Companies are competing on battery life of portable devices, such as smartphones
 This drive for low power has resulted in different synthesis techniques.
 This paper will review and explore some of the techniques used to help reduce the power consumption of a circuit, with particular interest on the synthesis techniques used to do so.
 
-Two main branches of power - leakage and dynamic. 
-\todo{Explain these types of power}
+%Two main branches of power - leakage and dynamic. 
+%\inote{Explain these types of power}
+
+There are two main categories of power consumption - dynamic and leakage. 
+Dynamic power is the power consumed when the circuit is enabled and functioning. 
+Power is used here through the charging and discharging of the internal capacitors of the module.
+Leakage power is due to the non-ideal characteristics of sub-micron CMOS transistors.
+Leakage power mainly occurs when the module is in a idle, non-switching state \cite{bsoul2010fpga} and can contribute around 22\% of the total power consumption of a $90nm$ FPGA \cite{altera2005}
 
 The report begins with a review of different techniques in turn. 
 This includes a brief introduction to the theory and a discussion of synthesis problems and solutions.
 The report concludes by reviewing all techniques and their relevant advantages and disadvantages. 
-
 %\inote{Define terms here.}
 

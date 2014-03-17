@@ -1,5 +1,5 @@
 
-\documentclass[journal]{IEEEtran}
+\documentclass[journal,draft]{IEEEtran}
 % *** CITATION PACKAGES ***
 %
 %\usepackage{cite}
@@ -21,8 +21,9 @@
 
 
 \usepackage[nodayofweek]{datetime}
-\usepackage{todonotes}
-\newcommand{\citeneeded}{\cite{NEEDED} \todo[color=green!40]{Citation needed}}
+\usepackage[obeyDraft]{todonotes}
+\newcommand{\inote}[1]{\todo[inline]{#1}}
+\newcommand{\citeneeded}{\cite{NEEDED} \todo[inline,color=green!40]{Citation needed}}
 
 % *** GRAPHICS RELATED PACKAGES ***
 %
@@ -64,7 +65,7 @@
 % You can find documentation about the pdfTeX application at:
 % http://www.tug.org/applications/pdftex
 \usepackage{graphicx}
-
+\setkeys{Gin}{draft=false}
 % *** SUBFIGURE PACKAGES ***
 %\usepackage[tight,footnotesize]{subfigure}
 % subfigure.sty was written by Steven Douglas Cochran. This package makes it

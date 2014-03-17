@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Sun 16 Mar 2014 21:05:17 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Mon 17 Mar 2014 11:33:11 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -30,6 +30,7 @@ Figure \ref{fig:powerswitches} shows the realisation of the power gating circuit
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{Figures/powergating_switches.pdf}
 \caption{Circuit diagrams showing the use of footer switches (left) or header switches (right).}
+\todo[inline]{Break this into two subfigures}
 \label{fig:powerswitches}
 \end{figure}
 
@@ -52,7 +53,7 @@ The power manager is responsible for when to turn the module on and off.
 As well as the control of the sleep transistors, the power manager is also responsible for the stopping the clock, clamping the outputs and saving the state to the state retention mechanism.
 
 There is a large overhead in the additional circuitry needed for power gating. 
-The main increase are the state retention registers as these can require 10\% more area in silicon \citeneeded. 
+The main increase are the state retention registers as these can require 10\% more area in silicon \citeneeded
 When footer switches are used, the voltage that at the source of the NMOS is known as the virtual ground (VGND). When the footer is active, VGND $\approx$ GND. When off, VGND $\approx V_{dd}$.
 A full realisation of a power gated circuit is shown in figure \ref{fig:powergated}. 
 
@@ -118,4 +119,6 @@ In general, the closer the virtual ground is to ground, the more leakage current
 
 \subsection{Power Scaling}
 
+\inote{I want to try and find use of two modules, one with a Low $V_t$ for high performace, high power, and a high $V_t$ for low performance, low power, which can be switched between. 
+If not, just look at multi $V_t$ technologies}
 %\inote{What actually am I wanting to discuss here?}
