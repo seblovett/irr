@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Mon 17 Mar 2014 11:33:11 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Sat 22 Mar 2014 16:06:06 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -10,15 +10,16 @@
 
 Leakage currents begin to occur in sub-micron technologies, typically lower than 100nm \cite{bsoul2010fpga, nair2009comparative}.
 With each technology generation, gate leakage increases 30 fold \cite{bernstein2003design}.
-Leakage currents can are identified as two sources - subthreshold currents and gate tunnelling. 
-Subthreshold currents occur when the voltage applied to the gate is lower than the transistor threshold voltage. 
+Leakage currents can are identified as two sources - sub-threshold currents and gate tunnelling. 
+Sub-threshold currents occur when the voltage applied to the gate is lower than the transistor threshold voltage. 
 The channel of the transistor during weak inversion still allows some current to flow from source to drain.
-This current is the subthreshold current an occurs when the transistor is off and is also exponentially dependant on $V_{th}$ \cite{borkar1999design}.
+This current is the sub-threshold current an occurs when the transistor is off and is also exponentially dependant on $V_{th}$ \cite{borkar1999design}.
 Gate tunnelling currents increase with thinner oxide layer \cite{m2002international}. 
 A thin oxide results in electrons being able to pass through the gate into the substrate of the transistor. 
 This thin gate results in electrons passing through it, into the circuit causing leakage. 
 Gate tunnelling occurs when the transistor is active \cite{nair2009comparative}.
 
+\todo[inline]{\cite{altera2005} has a good figure of the leakage currents}
 
 \subsubsection{Theory}
 
@@ -53,14 +54,18 @@ The power manager is responsible for when to turn the module on and off.
 As well as the control of the sleep transistors, the power manager is also responsible for the stopping the clock, clamping the outputs and saving the state to the state retention mechanism.
 
 There is a large overhead in the additional circuitry needed for power gating. 
-The main increase are the state retention registers as these can require 10\% more area in silicon \citeneeded
+The main increase are the state retention registers as these can require 20\% more area in silicon \cite{stateretarea}. 
+Other techniques exist to avoid this, such as the use of the scan path to quickly clock the state in and out to/from memory.
+Digital signal processing, however, would not need this as it is data dependent. 
+Processors with cache have a large amount of state data, so state retention registers are needed here.
+
 When footer switches are used, the voltage that at the source of the NMOS is known as the virtual ground (VGND). When the footer is active, VGND $\approx$ GND. When off, VGND $\approx V_{dd}$.
 A full realisation of a power gated circuit is shown in figure \ref{fig:powergated}. 
 
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{Figures/powergating_full.pdf}
-\caption{The relaisation of a power gated module. State retention, isolation and a power manager are all needed}
+\caption{The realisation of a power gated module. State retention, isolation and a power manager are all needed}
 \label{fig:powergated}
 \end{figure}
 
@@ -113,12 +118,18 @@ PARK & OFF  & ON   & $V_{th}$ PMOS \\ \hline
 \end{table}
 
 A further improvement to this single extra state is proposed in \cite{singh2007enhanced}. 
-Here, multiple intermediate power states are implemented by using different subthreshold gate voltages on the NMOS footer switch. 
+Here, multiple intermediate power states are implemented by using different sub-threshold gate voltages on the NMOS footer switch. 
 The compromise of wake up time against leakage reduction can then be more finely controlled to best suit the circuit.
 In general, the closer the virtual ground is to ground, the more leakage current occurs, but a faster wake up is available. 
 
 \subsection{Power Scaling}
 
-\inote{I want to try and find use of two modules, one with a Low $V_t$ for high performace, high power, and a high $V_t$ for low performance, low power, which can be switched between. 
+\inote{I want to try and find use of two modules, one with a Low $V_t$ for high performance, high power, and a high $V_t$ for low performance, low power, which can be switched between. 
 If not, just look at multi $V_t$ technologies}
 %\inote{What actually am I wanting to discuss here?}
+\inote{Or I could look into adaptive body bias?}
+
+\subsubsection{Theory}
+
+
+\subsubsection{Synthesis Techniques}
