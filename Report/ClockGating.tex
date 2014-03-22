@@ -1,11 +1,11 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Mon 17 Mar 2014 11:37:06 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Sat 22 Mar 2014 14:40:49 GMT by seblovett on seblovett-Ubuntu +>
 
-\section{Clock Gating}
+\subsection{Clock Gating}
 
-\subsection{Theory}
+\subsubsection{Theory}
 
 The clock in a sequential circuit can contribute 15-45\% of the power \cite{pedram1996power}.
 Therefore it is a large area of potential power saving.
@@ -31,7 +31,7 @@ The load-enable registers are still clocked at the master clock frequency.
 \label{fig:cg:circuit2}
 \end{figure}
 
-\subsection{Synthesis Techniques}
+\subsubsection{Synthesis Techniques}
 
 A gating function is typically defined by the designer within the RTL design stage.
 However, a more common approach is to allow the synthesis tool to obtain the gating functions from a gate-level netlist \cite{benini1999symbolic, hurst2008automatic}.
@@ -46,7 +46,7 @@ However, sometimes the addition of clock gating is not advantageous.
 The gating function can be large and therefore can cause timing violations, resulting in an unsuitable synthesis.
 If the gating function is large enough, it can also consume more power than it saves.
 Both of these issues are addressed in \cite{arbel2009resurrecting}.
-Here, the author proposed solutions to large gating funcitons by reducing the depth of logic by an approximation. 
+Here, the author proposed solutions to large gating functions by reducing the depth of logic by an approximation. 
 The approximation is made such that the resulting logic does not gate the clock more than the original function. 
 It results in the flip-flop being clocked more often, but reduces the logic so that it can be utilised, thereby saving some power.
 
@@ -54,7 +54,7 @@ It results in the flip-flop being clocked more often, but reduces the logic so t
 The algorithm looks at grouping similar gating functions. 
 This can then reduce the overall logic needed to implement the clock gating and maximise the energy saved.
 
-\subsection{Conclusion}
+\subsubsection{Conclusion}
 
 Clock gating is a simple principle to implement on a small scale.
 The underlying theory is to disable a module when it is not in use.
