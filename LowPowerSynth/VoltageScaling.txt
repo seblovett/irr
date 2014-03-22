@@ -1,0 +1,78 @@
+! VoltageScaling.txt created by seblovett at Mon 17 Mar 2014 12:25:32 GMT on seblovett-Ubuntu
+! <+Last Edited: Mon 17 Mar 2014 15:36:49 GMT by seblovett on seblovett-Ubuntu +>
+
+
+
+
+Simultaneous Dynamic Voltage Scaling of Processors and Communication Links in Real-Time Distributed Embedded Systems
+--------------------------------------------------------------------------------------------------------------------
+Juong Luo
+
+
+Dynamic voltage scaling is a good technique for trading off power consumption and performance
+
+Addresses joint dynamic voltage scaling for variable voltage processors and comms links
+
+Commercial voltage scaleable processors: Intel Xscale, Transmeta Crusoe, AMR mobile with PowerNow! 
+
+Voltage scalable, variable frequency links for parallel [4] and serial [5].
+
+Voltage scaling in high performance interconnection networks [9]
+
+Single processor variable voltage scaling systems [10,11,12]
+
+Multiple Voltage scaling at behavioural synthesis stage [16]
+
+
+This paper looks at dynamic voltage scaling of processor and communications links simultaneously.
+
+Proposed algorithm handles both control flow and data flow .
+
+[4] A variable frequency parallel I/O interface with adaptive power supply regulation, G. Wei
+
+[5] J. Kim and M. Horowitz, “Adaptive supply serial links with sub-1 V operation and per-pin clock recovery,” inProc. Int. Solid-State Circuits Conf., 2002, pp. 216–217.
+
+
+
+[9] L. Shang "Dynamic voltage scaling with links for power optimization of interconnection networks"
+
+[10] F. Yao, A. Demers, and S. Shenker, “A scheduling model for reduced CPU energy,” in Proc. Symp. Foundations Comput. Sci., 1995, pp. 374–382.
+
+[11] A. Manzak, "Variable voltage task scheduling algorithms for minimizing energy"
+
+[12] T. Pering, T. Burd, and R. Brodersen, “The simulation and evaluation of dynamic voltage scaling algorithms,” inProc. Int. Symp. Low Power Electron. Des., 1998, pp. 76–81
+
+
+* [16] S. Raje and M. Sarrafzadeh, "Scheduling with multiple voltages," VLSI J. Integr., vol. 23, no. 1, pp. 37–59, Oct. 1997.
+
+
+
+An Efficient Voltage Scaling Algorithm for Complex SoCs with Few Number of Voltage Modes
+----------------------------------------------------------------------------------------
+Bita Gorjiara
+
+
+Needs many on chip voltage regulators. 
+
+Algorithms must be efficient and fast. 
+
+Paper proposes Adaptive Stochastic Gradient Voltage and Task Scheduling. 
+Saves between 26% and 33% 
+
+Dynamic power and static power have quadratic and exponential relationship to the supply voltage respectively [22]
+
+For dynamic voltage scaling, need many on-chip voltage regulators.
+
+Gentic algorithms to help solve the problem [4]
+
+Scheduler needs to order tasks to maximise efficiency [14]
+
+Algorith that selects voltage modes and decides on execution on priority values based on energy consumption, delays and deadlines [7]
+
+Genetic algo based on energy saving potential and assigns slack time. [14][15]
+
+[4] -> Genetic to read
+[7]
+[14]
+
+[22]
