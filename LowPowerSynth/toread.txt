@@ -1,5 +1,5 @@
 ! toread.txt created by seblovett at Mon 10 Feb 2014 10:17:19 GMT on seblovett-Ubuntu
-! <+Last Edited: Sun 16 Mar 2014 18:08:01 GMT by seblovett on seblovett-Ubuntu +>
+! <+Last Edited: Mon 17 Mar 2014 12:49:40 GMT by seblovett on seblovett-Ubuntu +>
 
 
 P. Lindgren, M. Kemu, R. Drechsler, and M. Thomton. Low power optimization techniques for bdd mapped circuits using temporal correlation. In technical report, 200 I . - not on IEE - cannot get
@@ -62,9 +62,9 @@ Synthesis of power efficient systems-on-silicon - Kirovski, D.
 
 
 
-** Power Gating
+** Voltage Scaling
 
-S. Kim, S. Kosonocky, D. Knebel, and K. Stawiasz, “Experimental measurement of a novel power gating structure with intermediate power saving mode,” in Proc. Int. Symp. Low Power Electron. Des., 2004, pp. 20–25.
+S. Raje and M. Sarrafzadeh, "Scheduling with multiple voltages," VLSI J. Integr., vol. 23, no. 1, pp. 37–59, Oct. 1997.
 
 
 
