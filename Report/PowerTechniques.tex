@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Sat 22 Mar 2014 16:06:06 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Tue 25 Mar 2014 18:49:57 GMT by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -18,8 +18,15 @@ Gate tunnelling currents increase with thinner oxide layer \cite{m2002internatio
 A thin oxide results in electrons being able to pass through the gate into the substrate of the transistor. 
 This thin gate results in electrons passing through it, into the circuit causing leakage. 
 Gate tunnelling occurs when the transistor is active \cite{nair2009comparative}.
+Figure \ref{fig:leakage} shows where these leakage currents occur on an NMOS transistor.
 
-\todo[inline]{\cite{altera2005} has a good figure of the leakage currents}
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{Figures/leakage.eps}
+\caption{The locations of gate and subthreshold leakage on an NMOS transistor}
+\label{fig:leakage}
+\end{figure}
+%\todo[inline]{\cite{altera2005} has a good figure of the leakage currents}
 
 \subsubsection{Theory}
 
@@ -100,7 +107,9 @@ The virtual ground is at the threshold voltage of the PMOS, so the leakage curre
 This drastically reduces the wake up overhead of the circuit. 
 
 \begin{figure}
-\missingfigure{\cite{kim2004experimental} power states circuit}
+\centering
+%\missingfigure{\cite{kim2004experimental} power states circuit}
+\includegraphics{Figures/powergating_kim.eps}
 \caption{Middle power state implementation used in \cite{kim2004experimental}}
 \label{fig:kim}
 \end{figure}
