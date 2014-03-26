@@ -7,7 +7,7 @@
 
 \subsubsection{Theory}
 
-The clock in a sequential circuit can contribute 15-45\% of the power \cite{pedram1996power}.
+The clock in a sequential circuit can consume 15-45\% of the power \cite{pedram1996power}.
 Therefore it is a large area of potential power saving.
 Clock gating is an approach of controlling the clock to individual modules of a design by either stopping or slowing down the clock with respect to a master clock \cite{841927}. 
 An approach, seen in \cite{tellez1995activity}, involves stopping the clock to unused modules.
@@ -21,6 +21,7 @@ The load-enable registers are still clocked at the master clock frequency.
 \includegraphics[width=0.5\textwidth]{Figures/clockgating_and.pdf}
 \caption{Clock gating circuit using an \texttt{AND} gate}
 \todo[inline]{Gated Module or Gated Circuit? Consistency with the other diagrams}
+\todo[inline]{Is this even needed?}
 \label{fig:cg:circuit1}
 \end{figure}
 
@@ -49,9 +50,7 @@ Both of these issues are addressed in \cite{arbel2009resurrecting}.
 Here, the author proposed solutions to large gating functions by reducing the depth of logic by an approximation. 
 The approximation is made such that the resulting logic does not gate the clock more than the original function. 
 It results in the flip-flop being clocked more often, but reduces the logic so that it can be utilised, thereby saving some power.
-
-\cite{arbel2009resurrecting} also proposes the use of a clustering algorithm. 
-The algorithm looks at grouping similar gating functions. 
+\cite{arbel2009resurrecting} also proposes the use of a clustering algorithm that looks at grouping similar gating functions. 
 This can then reduce the overall logic needed to implement the clock gating and maximise the energy saved.
 
 \subsubsection{Conclusion}

@@ -13,10 +13,10 @@ With each technology generation, gate leakage increases 30 fold \cite{bernstein2
 Leakage currents can are identified as two sources - sub-threshold currents and gate tunnelling. 
 Sub-threshold currents occur when the voltage applied to the gate is lower than the transistor threshold voltage. 
 The channel of the transistor during weak inversion still allows some current to flow from source to drain.
-This current is the sub-threshold current an occurs when the transistor is off and is also exponentially dependant on $V_{th}$ \cite{borkar1999design}.
+This current occurs when the transistor is off and is also exponentially dependant on $V_{th}$ \cite{borkar1999design}.
 Gate tunnelling currents increase with thinner oxide layer \cite{m2002international}. 
 A thin oxide results in electrons being able to pass through the gate into the substrate of the transistor. 
-This thin gate results in electrons passing through it, into the circuit causing leakage. 
+%This thin gate results in electrons passing through it, into the circuit causing leakage. 
 Gate tunnelling occurs when the transistor is active \cite{nair2009comparative}.
 Figure \ref{fig:leakage} shows where these leakage currents occur on an NMOS transistor.
 
@@ -45,19 +45,19 @@ Figure \ref{fig:powerswitches} shows the realisation of the power gating circuit
 Although the theory of operation is simple, the technique poses many issues in the implementation.
 Firstly, as the module is floating, the outputs are undefined.
 This can cause the gates in another module to short circuit - at an input voltage of $ V_{dd} / 2 $, both the NMOS and PMOS transistors will be on, resulting in a direct line from supply to ground. 
-The solution to this is is to add logic gates with a 'clamp' signal. 
-This could be either an AND gate, of which the clamp signal is active low, or an OR gate with an active high clamp. 
-This added logic is needed per signal output of the power gated module.
+The solution to this is is to add logic gates with a `clamp' signal. 
+This could be either an \texttt{AND} gate, of which the clamp signal is active low, or an \texttt{OR} gate with an active high clamp. 
+This added logic is needed per output signal of the power gated module.
 
 The second issue that power gating raises is when the gated module contains sequential logic. 
 By removing the power to the sequential logic, the state is lost. 
 This can then cause issues as state retention may be necessary, as well as low power.
 The solution is to use a state retention register. 
 There is a timing overhead involved to store the register before putting the device to sleep, disabling the majority of the circuit. 
-State retention registers also require an individual power supply, meaning all power gated modules require two supplies; one which is gated and one constant supply.
+State retention registers also require an ungated power supply, meaning all power gated modules require two supplies; one which is gated and one constant supply.
 
 The final aspect of power gating that needs addressing is the power management.
-The power manager is responsible for when to turn the module on and off.
+The power manager is responsible for when to gate the module.% on and off.
 As well as the control of the sleep transistors, the power manager is also responsible for the stopping the clock, clamping the outputs and saving the state to the state retention mechanism.
 
 There is a large overhead in the additional circuitry needed for power gating. 
@@ -79,7 +79,7 @@ A full realisation of a power gated circuit is shown in figure \ref{fig:powergat
 
 \subsubsection{Synthesis Techniques}
 
-Fine and coarse grain techniques
+%Fine and coarse grain techniques
 Power gating can be split into two techniques, fine and coarse grain.
 Fine grain gating is where individual cells (e.g. in ASIC) have their own gating transistor. 
 Coarse grain techniques are where gating transistors are applied on a larger module scale.
