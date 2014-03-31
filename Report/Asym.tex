@@ -1,0 +1,57 @@
+%  Asym.tex
+%  Document created by seblovett on seblovett-Ubuntu
+%  Date created: Mon 31 Mar 2014 11:50:09 BST
+%  <+Last Edited: Mon 31 Mar 2014 16:53:02 BST by seblovett on seblovett-Ubuntu +>
+
+\section{Asymmetric Multi-Cores}
+
+\subsection{Theory}
+\todo[inline]{get buzz word `hetrogeneous' in here a few times}
+Discuss symmetric, performance asymmetric and asymmetric multi-cores
+Multi-core architectures are not a new concept. 
+A multi-core processor is a single die with two or more independent identical CPUs. 
+They can have a shared cache and be connected on a bus.
+An asymmetric multi-core processor is a chip which has two or more independent CPUs (usually two).
+The difference to a symmetric multi-core processor, is that the cores are not the same. 
+The cores can differ in cache, clock frequency, area and power, but maintain the same Instruction Set Architecture \cite{SilvaPower}.
+The cores therefore can have different optimisations.
+
+
+Asymmetric multi-core architectures can be split into two categories - function or performance asymmetry \cite{WangEnergy}.
+Performance asymmetry is where the cores differ only by their performance, and subsequently power. 
+This is achieved by having a multi-core processor with cores that can be individually gated, or scaled with DVFS.
+The Intel Single-chip Cloud Computer is such a device that supports this \cite{IntelSCC}.
+
+Functional asymmetry is where the processor has heterogeneous with memory, architecture (and usually also performance).
+One large upcoming functional asymmetric multi-core architecture is the ARM big.LITTLE. 
+The architecture of the device is seen in figure \ref{fig:bigLITTLE:arch}.
+There are two cores in the big.LITTLE - a Cortex A15 and Cortex A7.
+The A15 is a high performance, high energy consumption, out of order execution processor.
+The A7 is the opposite of the A15 as it is an in order, energy efficient processor, and a compromise of performance.
+This asymmetric configuration allows performance critical tasks to be performed on the larger core, which can be powered down during periods of inactivity while the smaller, energy efficient core conducts other, non performance reliant tasks.
+big.LITTLE implements clock and power gating, and Dynamic Voltage and Frequency Scaling on the cores to aid the energy savings.
+
+
+\begin{figure}
+\missingfigure{ARM big.LITTLE architecture}
+\caption{ARM big.LITTLE Architecture diagram}
+\label{fig:bigLITTLE:arch}
+\end{figure}
+
+Discuss pros/cons to AMC
+
+\subsection{Scheduling Techniques}
+
+The main issue to asymmetric multi-core architectures is around the scheduling of tasks to the correct core.
+Parallel programming also is not directly applicable to a asymmetric architecture. 
+This is due to the assumption of symmetry in parallel programming - that each task would take the same time on any core. 
+This is not so due to the performance difference between the cores.
+
+Discuss literature which look at the solution to this.
+
+\subsection{Conclusion}
+
+Good or bad idea? Have the issues been solved?
+
+
+

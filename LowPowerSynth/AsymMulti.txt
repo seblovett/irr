@@ -1,0 +1,219 @@
+! AsymMulti.txt created by seblovett at Sun 30 Mar 2014 20:28:25 BST on seblovett-Ubuntu
+! <+Last Edited: Mon 31 Mar 2014 16:01:54 BST by seblovett on seblovett-Ubuntu +>
+
+
+Asymmetric Mutli-cores
+======================
+
+ARM big.LITTLE is primary example.
+
+
+
+Power-performance modeling on asymmetric multi-cores
+----------------------------------------------------
+Pricopi, M.
+
+good for power and thermal constrained environments
+
+cores with different power and performance techniques.
+
+mapping of workloads to appropriate cores is a challenging task
+
+this work proposes a software based modeling technique that estimates performance and power consumption of workloads for different core types
+
+ARM big.LITTLE use to test
+
+Asymmetric multi-cores are also known as `single-ISA heterogeneous multi-cores' [16]
+
+provide a good power-performance compromise:
+has a small low power core and a large high performance core on same chip
+both have same instruction set.
+
+ARM big.LITTLE [5]
+NVidia Kal-El [4]
+
+Work load scheduling is the challange 
+
+[7,15,18] use small for memory intensive workloads and compute-intensive on large
+[22] shows this is sub-optimal
+
+[22] collects profile information while executing application on a core. 
+Estmates performance on other core. 
+This allows for better scheduling
+However, makes assumptions that render it difficult to be realised (identical cache hierarchy, profile information, power estimation, only run in a flexible simulator)
+
+This paper overcomes difficulties not addressed in [22]:
+- cores are dramatically different (pipeline, branch predictor, memory hierarchy)
+- lack of performance counters (and missmatch between cores, e.g. L2 cache write access counter)
+- cannot rely on profiling information (e.g. inter-instruction dependency) as this needs extra hardware
+
+Uses compile time analysis, mechanistic modelling [13,14] and empirical modelling [12,17]
+
+Uses Cycles per instruction (CPI)to quantify impact of different architectural events.
+Can obtain info on cache miss, branch misprediction from hardware counters. 
+Data dependencies must  be identified at compile time to predict pipeline stalls
+
+Once CPI is got for one core, then estimated for the other to estimate power on the other.
+
+[5] ARM Ltd., 2011. http://www.arm.com/products/tools/development-boards/versatile-express/index.php.
+
+[16] Rakesh Kumar, Keith I Farkas, Norman P Jouppi, Parthasarathy Ranganathan, and Dean M Tullsen. Single-ISA heterogeneous multi-core architectures: The potential for processor power reduction. In MICRO, pages 81–92, 2003.
+
+[22] Kenzo Van Craeynest, Aamer Jaleel, Lieven Eeckhout, Paolo Narvaez, and Joel Emer. Scheduling heterogeneous multi-cores through performance impact estimation (PIE). ISCA, pages 213–224, 2012.
+
+
+Hierarchical power management for asymmetric multi-core in dark silicon era
+---------------------------------------------------------------------------
+Muthukaruppan, T.S
+
+
+Hierarchical power management framework for asymmetric multi-cores
+
+Thermal constraints considered too.
+
+power and thermal limits have rendered chips with un-powered (dark) cores. 
+Known as `dark silicon'
+seen in areas where cooling is restricted.
+
+Cores share same ISA but architecture differ to give diverse power/performance characteristics.
+leads to substantially improved energy efficiency [18,9]
+
+ARM big.LILLTE
+A15 out of order high performance
+A7 in-order energy efficient
+
+This paper presents power managemnt framework for asymmetric multi-cores while minimizing energy consumption within the Thermal Design Power constraint.
+
+Objectives:
+- runtime alloction of tasks to cores
+- power hungry core should be used sparingly
+- DVFS used per cluster rather than per core. Cluster should be run at minimum frequency to conserve energy
+- TDP must be adhered to
+- Quality of service should degrade `gracefully' is power budget is spent
+- Framework should be integrated into OS
+
+
+
+High-performance and energy-efficient mobile web browsing on big/little systems
+-------------------------------------------------------------------------------
+Yuhao Zhu
+
+drive for mobile browsing. 
+
+paper demonstates the benefits of hetrogeneous systems with big/little cores, each with different frequencies to acheive the ideal trade-off between high performance and energy efficiency
+
+acheives 83% energy savings while violating 4.1% more webpages with cut-off latency (compared to a performanc oriented hardware strategy)
+Against OS driven DVFS, it acheives 8.6% energy savings and 4% increase in performance.
+
+Uses a Cortex A9 (big) and A8 (little). 
+On two chips - not same silicon.
+DOn't know if they run same IS? 
+
+
+A lot about the web side of things. 
+
+
+Power/performance optimization in FPGA-based asymmetric multi-core systems
+--------------------------------------------------------------------------
+de Abreu Silva, B
+
+Run time information is used to decide on thread scheduling, clock gating and DVFS
+
+AMCD uses same ISA
+but cores can differ in cache, clock frequency, area, power etc.
+
+In multithreaded applications, asym out performs sym [1]
+
+scheduler and power manager to give high performance, low power consumption [2]
+
+parallelizing compiler [3]
+
+automated synthesis for parallel programs [4]
+
+This paper exploits both compile time and run time optimisations
+
+
+
+WATS: Workload-Aware Task Scheduling in Asymmetric Multi-core Architectures
+---------------------------------------------------------------------------
+Quan Chen
+
+AMC have shown high performance as well as power efficiency.
+
+However, parallel programming does not perform well on AMC due to the assumption of symmetric cores.
+Can cause unbalanced workloads and degrade the performance
+
+WATS is a scheme that uses history-based task allocation and preference based task stealing. 
+Dynamically adjusts the workload in AMC if task allocation is suboptimal.
+
+Shown improvement of 82.7%
+
+Asymetric Multi-Cores - cores have different computational capabilities [1,2,3,4]
+
+(Nintendo Wii and DS use AMC)
+
+DVFS in sym cores can turn it to a performance AMC chip.
+
+Task stealing is scalable and has high performance [10]
+
+Issues arise with long task on slow core and shot task on fast core - very unbalanced.
+
+Contributions:
+- identified, defined and formalised the problem of unbalanced workloads in AMC
+- History based task allocation that can allocate near-optimally
+- novel preference based task stealing policy
+- implemented WATS, resulting in 82.7% performance gain. 
+
+
+[1] Heterogeneous chip multiprocessorss - Kumar 2005
+[2] Single ISA heterogeneous multi-core architectures for multithreaded workload performance - Kumar 2004
+[3] The impact of performance asymmetry in emerging multicore architectures - Balakrishnan 2005
+[4] Amdahl's law in the multicore era - Hill 2008
+[10] Scheduling multithreaded computation by work stealing - Blumofe 1999
+
+
+Energy-efficient virtual machine scheduling in performance-asymmetric multi-core architectures
+----------------------------------------------------------------------------------------------
+Yefu Wang
+
+AMC can be beneficial to VMs on servers as they often show different performance needs
+
+N.B. This is performance asymmetric cores
+
+proper scheduling can potentially result in good energy savings.
+
+proposes a novel VM scheduling algorithm
+
+13.5% increase in performance per watt, up to 55%. Copared to current scheduler.
+
+AMC shown great promise [4,7,9,17,18]
+
+Current VM scheduler don't consider the heterogeneities of the cores [2,3,6,12,25]
+
+Challenges:
+- Characterising the application need and resource usage
+- Both performance and power need to be considered
+
+Chips with core level DVFS can employ power management solutions to run cores at different frequencies [1,10,11,14,19,22]
+
+Conributions
+ - A factor to characterise power and performace behaviours
+ - a VM scheduling algorithm
+ - integration methods of said algorithm
+ - implementation
+
+
+A distributed scheduling framework for asymmetric multi-core systems based on gridware
+--------------------------------------------------------------------------------------
+Rui-Zhong Chen
+
+scheduling is a difficulty.
+
+Gridware is computing model to design asummetric multi-core systems. 
+
+Asym gives power savings with similar performance [1]
+
+AMC is CPU with accelerator to help CPU perform computations faster than CPU alone [2]
+
+ranting on about fusion. don't really understand....
+
