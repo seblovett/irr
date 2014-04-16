@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Tue 25 Mar 2014 18:49:57 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Wed 16 Apr 2014 21:05:33 BST by seblovett on seblovett-NETBOOK +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -131,6 +131,35 @@ A further improvement to this single extra state is proposed in \cite{singh2007e
 Here, multiple intermediate power states are implemented by using different sub-threshold gate voltages on the NMOS footer switch. 
 The compromise of wake up time against leakage reduction can then be more finely controlled to best suit the circuit.
 In general, the closer the virtual ground is to ground, the more leakage current occurs, but a faster wake up is available. 
+
+Sub Clock Power Gating employs the same basic idea, but in a different manner \cite{mistry2011sub}.
+This technique reduces the leakage power of a circuit during the active state of the module.
+It utilises the fact that the combinational logic is not used for half the clock cycle in synchronous circuits.
+The combinational logic blocks can then be gated for half of the clock cycle.
+The result is that the combinational logic is turned off regularly. 
+The timings of the signals is seen in figure~\ref{fig:scpg:timing}.
+
+\begin{figure}
+\missingfigure{The power gating timing from \cite{mistry2011sub}.
+\caption{The signal timings for Sub Clock Power Gating. Reproduced from \cite{mistry2011sub}}
+\label{fig:scpg:gate}
+\end{figure}
+
+
+As this method only affects the combinational blocks, the sequential registers are not gated.
+This results in no need for state retention registers.
+Also, due to the reliance on the clock for the gating, the power management module is reduced to a combinational function depending on the clock. 
+This logic can be seen in figure~\ref{fig:scpg:gate}. 
+
+
+\begin{figure}
+\missingfigure{The power gating circuit from \cite{mistry2011sub}.
+\caption{The power management circuitry needed to implement Sub Clock Power Gating. Reproduced from \cite{mistry2011sub}}
+\label{fig:scpg:gate}
+\end{figure}
+
+It was found that sub clock power gating increased the energy efficiency of a multiplier and microprocessor by 45$\times$ and 2.5$\times$ respectively \cite{mistry2011sub}.
+This method overcomes the main additions needed (state retention and power manager) to implement power gating, with only isolation and the gating transistors needed. 
 
 \subsection{Power Scaling}
 
