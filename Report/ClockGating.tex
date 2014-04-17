@@ -1,11 +1,11 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Thu 17 Apr 2014 11:55:25 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Thu 17 Apr 2014 12:02:45 BST by seblovett on seblovett-Ubuntu +>
 
-\subsection{Clock Gating}
+\section{Clock Gating}
 
-\subsubsection{Theory}
+\subsection{Theory}
 
 The clock in a sequential circuit can consume 15-45\% of the power \cite{pedram1996power}.
 Therefore it is a large area of potential power saving.
@@ -32,7 +32,7 @@ The load-enable registers are still clocked at the master clock frequency.
 \label{fig:cg:circuit2}
 \end{figure}
 
-\subsubsection{Synthesis Techniques}
+\subsection{Synthesis Techniques}
 
 A gating function is typically defined by the designer within the RTL design stage.
 However, a more common approach is to allow the synthesis tool to obtain the gating functions from a gate-level netlist \cite{benini1999symbolic, hurst2008automatic}.
@@ -62,7 +62,7 @@ The area of the chip, core voltage and frequency remained the same over the two 
 The change of process showed a reduction of leakage power by three orders of magnitude. 
 Overall, the combination of both clock gating and using a low power library resulted in an efficient processor. 
 
-\subsubsection{Conclusion}
+\subsection{Conclusion}
 
 Clock gating is a simple principle to implement on a small scale.
 The underlying theory is to disable a module when it is not in use.
