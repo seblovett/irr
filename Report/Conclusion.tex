@@ -1,8 +1,45 @@
 %  Conclusion.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Mar 2014 14:41:26 GMT
-%  <+Last Edited: Sat 22 Mar 2014 14:41:39 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Thu 17 Apr 2014 12:37:00 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Conclusion}
-Lorem Ipsum\dots
+
+Three areas of power saving techniques have been discussed. 
+Firstly, clock gating is a method to reduce the dynamic power of a module. 
+This is done by disabling the clock meaning that the state, and therefore the internal signals, do not switch. 
+This saves a lot of power as when the module is not in use, no switching occurs. 
+Clock gating requires little hardware to implement in principle. 
+However, the gating functions can be large and sometimes consume more power than they save. 
+A number of methods to solve this issue exist and provide good solutions.
+
+
+Power gating is a technique to minimize leakage power.
+The basic principle is simple - addition of a MOS transistor between the circuit and the module is added to turn off the power.
+However, many issues arise, such as the need for isolation, state retention and a power manager.
+Though the isolation and state retention are easily solved, they increase the size of the module. 
+Some methods, such as using the scan path to quickly clock the state in and out, are suggested to speed up the process. 
+
+The power management poses this issue of when to sleep. 
+Sleeping requires an overhead of time, and therefore energy, to do so. 
+By implementing multiple sleep states, a compromise between wake up time and leakage power saving can be made. 
+This is more flexible for the power manager, so sleep states can be utilised more often, thereby saving energy.
+
+A novel approach to power gating is discussed. 
+Here, no power manger or state retention is used. 
+The combinational blocks are gated by the clock so that when the clock is high, the combinational logic is disabled. 
+When the clock is low, power is restored to the logic to calculate the next state. 
+A more complex isolation circuit is needed, and the maximum frequency of the circuit is reduced. 
+However, this method is very effective.
+
+Finally, asymmetric multicores are discussed.
+This method is where the cores of the processor are optimised differently.
+One core is an energy efficient core and the other is for high performance. 
+The combination of these can allocate different sized tasks dynamically - smaller tasks are given to the low performance core, while intensive tasks are allocated to the large core.
+This is a promising technique with large energy savings.
+
+In conclusion, there are many methods of low power design. 
+Two main areas exist for energy waste - dynamic and leakage. 
+A good low power design must implement multiple techniques to reduce the power. 
+Overall, a compromise between energy consumption and performance must be reached, though techniques such as asymmetric multicores and sub clock power gating are enabling a much better compromise.
 
