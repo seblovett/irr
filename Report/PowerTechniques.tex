@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Thu 17 Apr 2014 11:39:54 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Thu 17 Apr 2014 13:26:04 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -151,33 +151,38 @@ As this method only affects the combinational blocks, the sequential registers a
 This results in no need for state retention registers.
 Also, due to the reliance on the clock for the gating, the power management module is reduced to a combinational function depending on the clock. 
 This logic can be seen in figure~\ref{fig:scpg:gate}. 
+The isolation circuit also needs to be dependant on the clock.
+This circuit is needed to isolate during the high period of the clock. 
+It also must assert the isolate signal until the combinational logic block is recharged. 
+The isolation signal must be high when Virtual $V_{dd}$ is low and the clock is low, or when the clock is high. 
 
 
 \begin{figure}
 %\missingfigure{The power gating circuit from \cite{mistry2011sub}.}
 \includegraphics[width=0.4\textwidth]{Figures/scpg_circuit.png}
 \caption{The power management circuitry needed to implement Sub Clock Power Gating. Reproduced from \cite{mistry2011sub}}
+\todo[inline]{redo this. Add isolation circuit too}
 \label{fig:scpg:gate}
 \end{figure}
 
 It was found that sub clock power gating increased the energy efficiency of a multiplier and microprocessor by 45$\times$ and 2.5$\times$ respectively \cite{mistry2011sub}.
 This method overcomes the main additions needed (state retention and power manager) to implement power gating, with only isolation and the gating transistors needed. 
 
-\subsection{Power Scaling}
-
-\inote{I want to try and find use of two modules, one with a Low $V_t$ for high performance, high power, and a high $V_t$ for low performance, low power, which can be switched between. 
-If not, just look at multi $V_t$ technologies}
-%\inote{What actually am I wanting to discuss here?}
-\inote{Or I could look into adaptive body bias?}
-
-\subsubsection{Theory}
-
-
-\subsubsection{Synthesis Techniques}
-
-
-\subsection{Power Domains}
-
-\subsubsection{Theory}
-
-\subsubsection{Synthesis}
+%\subsection{Power Scaling}
+%
+%\inote{I want to try and find use of two modules, one with a Low $V_t$ for high performance, high power, and a high $V_t$ for low performance, low power, which can be switched between. 
+%If not, just look at multi $V_t$ technologies}
+%%\inote{What actually am I wanting to discuss here?}
+%\inote{Or I could look into adaptive body bias?}
+%
+%\subsubsection{Theory}
+%
+%
+%\subsubsection{Synthesis Techniques}
+%
+%
+%\subsection{Power Domains}
+%
+%\subsubsection{Theory}
+%
+%\subsubsection{Synthesis}
