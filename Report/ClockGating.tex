@@ -1,7 +1,7 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Sat 22 Mar 2014 14:40:49 GMT by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Thu 17 Apr 2014 11:55:25 BST by seblovett on seblovett-Ubuntu +>
 
 \subsection{Clock Gating}
 
@@ -53,6 +53,15 @@ It results in the flip-flop being clocked more often, but reduces the logic so t
 \cite{arbel2009resurrecting} also proposes the use of a clustering algorithm that looks at grouping similar gating functions. 
 This can then reduce the overall logic needed to implement the clock gating and maximise the energy saved.
 
+A clock gated 8 bit microprocessor is proposed in \cite{hoon2013energy}. 
+The processor was originally and open core and modified to make it more energy efficient.
+The RTL was compiled to utilise clock gating and the addition of clock gating was found to reduce the dynamic power by 44.6\%.
+
+The microprocessor in \cite{hoon2013energy} was fabricated using a 130nm process, using two libraries - a general and a low power. 
+The area of the chip, core voltage and frequency remained the same over the two processes. 
+The change of process showed a reduction of leakage power by three orders of magnitude. 
+Overall, the combination of both clock gating and using a low power library resulted in an efficient processor. 
+
 \subsubsection{Conclusion}
 
 Clock gating is a simple principle to implement on a small scale.
@@ -61,7 +70,9 @@ This is done by identifying a gating function which disallows clock propagation 
 
 However, clock gating can produce large gating functions which violate the timing constraints of the circuit, or even consume more power than they save. This results in two problems that need solving - group formation and simplification \cite{han2012synthesis, paik2012clock}.
 
-
+Clock gating also only addresses the dynamic power consumption of a module. 
+This is a large proportion of the consumption of a chip using a technology over 100nm. 
+However, once a smaller technology is used, leakage power becomes a more dominant proportion of energy consumption. 
 
 
 
