@@ -26,8 +26,10 @@ Functional asymmetry is where the processor has heterogeneous with memory, archi
 One large upcoming functional asymmetric multi-core architecture is the ARM big.LITTLE. 
 The architecture of the device is seen in figure \ref{fig:bigLITTLE:arch}.
 There are two cores in the big.LITTLE - a Cortex A15 and Cortex A7.
-The A15 is a high performance, high energy consumption, out of order execution processor.\todo{discuss cache differences}
+The A15 is a high performance, high energy consumption, out of order execution processor.%\todo{discuss cache differences}
 The A7 is the opposite of the A15 as it is an in order, energy efficient processor, and a compromise of performance.
+These two cores differ in many aspects other than power consumption. 
+They have their own caches which are different sizes and structures and they have different number of pipelined stages also.
 This asymmetric configuration allows performance critical tasks to be performed on the larger core, which can be powered down during periods of inactivity while the smaller, energy efficient core conducts other, non performance reliant tasks.
 big.LITTLE implements clock and power gating, and Dynamic Voltage and Frequency Scaling on the cores to aid the energy savings.
 
@@ -37,7 +39,7 @@ big.LITTLE implements clock and power gating, and Dynamic Voltage and Frequency 
 %missingfigure{ARM big.LITTLE architecture}
 \includegraphics[width=0.8\textwidth]{Figures/armbiglittle.png}
 \caption{ARM big.LITTLE Architecture diagram, from \cite{muthukaruppan2013hierarchical}.}
-\todo[inline]{get caption to centre}
+%\todo[inline]{get caption to centre}
 \label{fig:bigLITTLE:arch}
 \end{figure*}
 
