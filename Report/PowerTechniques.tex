@@ -28,6 +28,8 @@ Figure \ref{fig:leakage} shows where these leakage currents occur on an NMOS tra
 \end{figure}
 %\todo[inline]{\cite{altera2005} has a good figure of the leakage currents}
 
+
+
 \subsubsection{Theory}
 
 Power gating, in principle, is where the power to a module is switched off when not in use. 
@@ -38,10 +40,30 @@ Figure \ref{fig:powerswitches} shows the realisation of the power gating circuit
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.3\textwidth]{Figures/powergating_switches.pdf}
-\caption{Circuit diagrams showing the use of footer switches (left) or header switches (right).}
+%\subfigure[Header PMOS transistor]{Figures/powergating_switches_header.pdf}
+%\subfigure[Footer NMOS transistor]{Figures/powergating_switches_footer.pdf}
+\caption{Circuit diagrams showing the use of power gating transistors.}%footer switches (left) or header switches (right).}
 \todo[inline]{Break this into two subfigures}
 \label{fig:powerswitches}
 \end{figure}
+
+%\begin{figure}[t!]
+%    \centering
+%    \begin{subfigure}{0.5\textwidth}
+%        \centering
+%        \includegraphics{Figures/powergating_switches_header.pdf}
+%        \caption{Header PMOS transistor}
+%    \end{subfigure}%
+%    ~ 
+%    \begin{subfigure}{0.5\textwidth}
+%        \centering
+%        \includegraphics{Figures/powergating_switches_footer.pdf}
+%        \caption{Footer NMOS transistor}
+%    \end{subfigure}
+%\caption{Circuit diagrams showing the use of power gating transistors.}%footer switches (left) or header switches (right).}
+%\label{fig:powerswitches}
+%\end{figure}
+
 
 Although the theory of operation is simple, the technique poses many issues in the implementation.
 Firstly, as the module is floating, the outputs are undefined.
