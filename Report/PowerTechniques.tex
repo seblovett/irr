@@ -159,7 +159,7 @@ This technique reduces the leakage power of a circuit during the active state of
 It utilises the fact that the combinational logic is not used for half the clock cycle in synchronous circuits.
 The combinational logic blocks can then be gated for half of the clock cycle.
 The result is that the combinational logic is turned off regularly. 
-The timings of the signals is seen in figure~\ref{fig:scpg:timing}.
+The timings of the signals are seen in figure~\ref{fig:scpg:timing}.
 
 \begin{figure}
 %\missingfigure{The power gating timing from \cite{mistry2011sub}.}
@@ -178,7 +178,7 @@ This circuit is needed to isolate during the high period of the clock.
 It also must assert the isolate signal until the combinational logic block is recharged. 
 The isolation signal must be high when Virtual $V_{dd}$ is low and the clock is low, or when the clock is high. 
 
-
+\todo[inline]{Could be better to have the isolation / gating circuit instead of the clock gating with AND gate.}s
 \begin{figure}
 %\missingfigure{The power gating circuit from \cite{mistry2011sub}.}
 \includegraphics[width=0.4\textwidth]{Figures/scpg_circuit.png}
@@ -187,7 +187,7 @@ The isolation signal must be high when Virtual $V_{dd}$ is low and the clock is 
 \label{fig:scpg:gate}
 \end{figure}
 
-It was found that sub clock power gating increased the energy efficiency of a multiplier and microprocessor by 45$\times$ and 2.5$\times$ respectively \cite{mistry2011sub}.
+It was found that Sub Clock Power Gating increased the energy efficiency of a multiplier and microprocessor by 45$\times$ and 2.5$\times$ respectively \cite{mistry2011sub}.
 This method overcomes the main additions needed (state retention and power manager) to implement power gating, with only isolation and the gating transistors needed. 
 
 %\subsection{Power Scaling}

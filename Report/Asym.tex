@@ -22,14 +22,14 @@ Performance asymmetry is where the cores differ only by their performance, and s
 This is achieved by having a multi-core processor with cores that can be individually gated, or scaled with DVFS.
 The Intel Single-chip Cloud Computer is such a device that supports this \cite{IntelSCC}.
 
-Functional asymmetry is where the processor has heterogeneous with memory, architecture (and usually also performance).
+Functional asymmetry is where the processor is heterogeneous with memory, architecture (and usually also performance).
 One large upcoming functional asymmetric multi-core architecture is the ARM big.LITTLE. 
 The architecture of the device is seen in figure \ref{fig:bigLITTLE:arch}.
 There are two cores in the big.LITTLE - a Cortex A15 and Cortex A7.
 The A15 is a high performance, high energy consumption, out of order execution processor.%\todo{discuss cache differences}
 The A7 is the opposite of the A15 as it is an in order, energy efficient processor, and a compromise of performance.
-These two cores differ in many aspects other than power consumption. 
-They have their own caches which are different sizes and structures and they have different number of pipelined stages also.
+%These two cores differ in many aspects other than power consumption. 
+%They have their own caches which are different sizes and structures and they have different number of pipelined stages also.
 This asymmetric configuration allows performance critical tasks to be performed on the larger core, which can be powered down during periods of inactivity while the smaller, energy efficient core conducts other, non performance reliant tasks.
 big.LITTLE implements clock and power gating, and Dynamic Voltage and Frequency Scaling on the cores to aid the energy savings.
 
@@ -76,9 +76,9 @@ Task stealing is also scalable.
 %\cite{zhu2013high} - uses two chips (A9 and A8} to look at mobile browsing.
 %\cite{wang2012energy} scheduling of VMs. Higher level of scheduler, but shows promise.
 Scheduling can also be done at a higher level. 
-\cite{zhu2013high} looks a popular mobile task - web browsing. 
+\cite{zhu2013high} looks at a popular mobile task - web browsing. 
 Parsing web pages can take varying amounts of time, but are generally very complex tasks. 
-An asymmetric multi-core set up is used using an ARM Cortex A9 for the `big' core and an A8 for the 'little' core. 
+An asymmetric multi-core set up is used using an ARM Cortex A9 for the `big' core and an A8 for the `little' core. 
 It shows that even at a high level of task, a big/little configuration can yield energy savings without a drastic performance decrease compared to performance focussed systems.
 
 Virtual machines (VMs) are commonly used on servers. 
@@ -99,7 +99,7 @@ Not only the frequency of the core is different, but there are differing numbers
 The A15 also has cache miss and branch misprediction counters, where as the A8 does not. 
 The main thing the two cores have in common is that they share the same instruction set. 
 Due to the differences of the cores, it is difficult to predict the performance of a task on a core.
-One technique used is looking at the Cycles per instruction of the core \cite{pricopi2013power}. 
+One technique used is looking at the Cycles per Instruction (CPI) of the core \cite{pricopi2013power}. 
 This gives an insight into the differences of the cores. 
 This measure can then be used to predict the power consumption of the task when run on the other core. 
 However, this is unable to identify data dependencies of the task. 

@@ -8,7 +8,7 @@
 Three areas of power saving techniques have been discussed. 
 Firstly, clock gating is a method to reduce the dynamic power of a module. 
 This is done by disabling the clock meaning that the state, and therefore the internal signals, do not switch. 
-This saves a lot of power as when the module is not in use, no switching occurs. 
+This saves a lot of dynamic power as when the module is not in use, no switching occurs. 
 Clock gating requires little hardware to implement in principle. 
 However, the gating functions can be large and sometimes consume more power than they save. 
 A number of methods to solve this issue exist and provide good solutions.
@@ -18,7 +18,7 @@ Power gating is a technique to minimize leakage power.
 The basic principle is simple - addition of a MOS transistor between the circuit and the module is added to turn off the power.
 However, many issues arise, such as the need for isolation, state retention and a power manager.
 Though the isolation and state retention are easily solved, they increase the size of the module. 
-Some methods, such as using the scan path to quickly clock the state in and out, are suggested to speed up the process. 
+Some methods, such as using the scan path to quickly clock the state in and out, are suggested to speed up the process of state retention. 
 
 The power management poses this issue of when to sleep. 
 Sleeping requires an overhead of time, and therefore energy, to do so. 
