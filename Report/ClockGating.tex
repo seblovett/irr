@@ -1,7 +1,7 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Thu 17 Apr 2014 12:02:45 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Wed 30 Apr 2014 09:34:22 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Clock Gating}
 
@@ -17,7 +17,8 @@ Although figure \ref{fig:cg:circuit1} is functionally complete, in reality, a la
 These are fundamentally different to load-enable registers, where the input is multiplexed between the current value or the input.
 The load-enable registers are still clocked at the master clock frequency.
 
-\begin{figure}
+\begin{figure}[t]
+\centering
 \includegraphics[width=0.5\textwidth]{Figures/clockgating_and.pdf}
 \caption{Clock gating circuit using an \texttt{AND} gate}
 %\todo[inline]{Gated Module or Gated Circuit? Consistency with the other diagrams}
@@ -25,7 +26,7 @@ The load-enable registers are still clocked at the master clock frequency.
 \label{fig:cg:circuit1}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[b]
 \includegraphics[width=0.5\textwidth]{Figures/clockgating_latch.pdf}
 \caption{Clock gating circuit using an \texttt{AND} gate and a latch}
 %\todo[inline]{Gated Module or Gated Circuit? Consistency with the other diagrams}
