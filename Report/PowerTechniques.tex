@@ -174,7 +174,7 @@ This results in no need for state retention registers.
 Also, due to the reliance on the clock for the gating, the power management module is reduced to a combinational function depending on the clock. 
 This logic can be seen in figure~\ref{fig:scpg:gate}. 
 The isolation circuit also needs to be dependant on the clock.
-This is seen in Firgue~\ref{fig:scpg:iso}.
+This is seen in Figure~\ref{fig:scpg:iso}.
 This circuit is needed to isolate during the high period of the clock. 
 It also must assert the isolate signal until the combinational logic block is recharged. 
 The isolation signal must be high when Virtual $V_{dd}$ is low and the clock is low, or when the clock is high. 

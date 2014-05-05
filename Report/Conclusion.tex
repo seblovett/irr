@@ -14,7 +14,7 @@ However, the gating functions can be large and sometimes consume more power than
 A number of methods to solve this issue exist and provide good solutions.
 
 
-Power gating is a technique to minimize leakage power.
+Power gating is a technique to minimise leakage power.
 The basic principle is simple - addition of a MOS transistor between the circuit and the module is added to turn off the power.
 However, many issues arise, such as the need for isolation, state retention and a power manager.
 Though the isolation and state retention are easily solved, they increase the size of the module. 
@@ -32,7 +32,7 @@ When the clock is low, power is restored to the logic to calculate the next stat
 A more complex isolation circuit is needed, and the maximum frequency of the circuit is reduced. 
 However, this method is very effective.
 
-Finally, asymmetric multicores are discussed.
+Finally, asymmetric multi-cores are discussed.
 This method is where the cores of the processor are optimised differently.
 One core is an energy efficient core and the other is for high performance. 
 The combination of these can allocate different sized tasks dynamically - smaller tasks are given to the low performance core, while intensive tasks are allocated to the large core.
@@ -46,5 +46,5 @@ This technique should suit very low power applications very well.
 In conclusion, there are many methods of low power design. 
 Two main areas exist for energy waste - dynamic and leakage. 
 A good low power design must implement multiple techniques to reduce the power. 
-Overall, a compromise between energy consumption and performance must be reached, though techniques such as asymmetric multicores and sub clock power gating are enabling a much better compromise.
+Overall, a compromise between energy consumption and performance must be reached, though techniques such as asymmetric multi-cores and sub clock power gating are enabling a much better compromise.
 
