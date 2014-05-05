@@ -1,7 +1,7 @@
 %  ClockGating.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Feb 2014 13:20:20 GMT
-%  <+Last Edited: Wed 30 Apr 2014 09:34:22 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Mon 05 May 2014 12:04:07 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Clock Gating}
 
@@ -13,7 +13,7 @@ Clock gating is an approach of controlling the clock to individual modules of a 
 An approach, seen in \cite{tellez1995activity}, involves stopping the clock to unused modules.
 
 This method can be realised using two simple circuits seen in figures \ref{fig:cg:circuit1} and \ref{fig:cg:circuit2}.
-Although figure \ref{fig:cg:circuit1} is functionally complete, in reality, a latch is needed to remove any glitches in the circuit.
+Although figure \ref{fig:cg:circuit1} is functionally complete, in reality a latch is needed to remove any glitches in the circuit.
 These are fundamentally different to load-enable registers, where the input is multiplexed between the current value or the input.
 The load-enable registers are still clocked at the master clock frequency.
 
@@ -55,10 +55,10 @@ It results in the flip-flop being clocked more often, but reduces the logic so t
 This can then reduce the overall logic needed to implement the clock gating and maximise the energy saved.
 
 A clock gated 8 bit microprocessor is proposed in \cite{hoon2013energy}. 
-The processor was originally and open core and modified to make it more energy efficient.
+The processor was originally an open core and modified to make it more energy efficient.
 The RTL was compiled to utilise clock gating and the addition of clock gating was found to reduce the dynamic power by 44.6\%.
 
-The microprocessor in \cite{hoon2013energy} was fabricated using a 130nm process, using two libraries - a general and a low power. 
+The microprocessor in \cite{hoon2013energy} was fabricated using a 130nm process, utilising two libraries - a general and a low power. 
 The area of the chip, core voltage and frequency remained the same over the two processes. 
 The change of process showed a reduction of leakage power by three orders of magnitude. 
 Overall, the combination of both clock gating and using a low power library resulted in an efficient processor. 

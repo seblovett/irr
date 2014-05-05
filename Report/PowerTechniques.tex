@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Wed 30 Apr 2014 09:32:57 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Mon 05 May 2014 11:59:12 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -10,7 +10,7 @@
 
 Leakage currents begin to occur in sub-micron technologies, typically lower than 100nm \cite{bsoul2010fpga, nair2009comparative}.
 With each technology generation, gate leakage increases 30 fold \cite{bernstein2003design}.
-Leakage currents can are identified as two sources - sub-threshold currents and gate tunnelling. 
+Leakage currents can be classified as either sub-threshold currents or gate tunnelling. 
 Sub-threshold currents occur when the voltage applied to the gate is lower than the transistor threshold voltage. 
 The channel of the transistor during weak inversion still allows some current to flow from source to drain.
 This current occurs when the transistor is off and is also exponentially dependant on $V_{th}$ \cite{borkar1999design}.
@@ -34,7 +34,7 @@ Figure \ref{fig:leakage} shows where these leakage currents occur on an NMOS tra
 
 Power gating, in principle, is where the power to a module is switched off when not in use. 
 By doing this, the module does not consume any power. 
-It can be achieved by using either a header or a footer switch to disable either the supply connection or the ground connection. 
+It can be achieved by using either a header or a footer switch to disable either the supply connection or the ground connection respectively. 
 Figure \ref{fig:powerswitches} shows the realisation of the power gating circuits.
 
 \begin{figure}[h]
@@ -42,7 +42,7 @@ Figure \ref{fig:powerswitches} shows the realisation of the power gating circuit
 \includegraphics[width=0.3\textwidth]{Figures/powergating_switches.pdf}
 %\subfigure[Header PMOS transistor]{Figures/powergating_switches_header.pdf}
 %\subfigure[Footer NMOS transistor]{Figures/powergating_switches_footer.pdf}
-\caption{Circuit diagrams showing the use of power gating transistors.}%footer switches (left) or header switches (right).}
+\caption{Circuit diagram showing the use of power gating transistors.}%footer switches (left) or header switches (right).}
 \todo[inline]{Break this into two subfigures}
 \label{fig:powerswitches}
 \end{figure}
@@ -80,11 +80,11 @@ There is a timing overhead involved to store the register before putting the dev
 State retention registers also require an ungated power supply, meaning all power gated modules require two supplies; one which is gated and one constant supply.
 
 The final aspect of power gating that needs addressing is the power management.
-The power manager is responsible for when to gate the module.% on and off.
+The power manager is responsible for when to gate the module. % on and off.
 As well as the control of the sleep transistors, the power manager is also responsible for the stopping the clock, clamping the outputs and saving the state to the state retention mechanism.
 
 There is a large overhead in the additional circuitry needed for power gating. 
-The main increase are the state retention registers as these can require 20\% more area in silicon \cite{stateretarea}. 
+The main increase is due the state retention registers as these can require 20\% more area in silicon \cite{stateretarea}. 
 Other techniques exist to avoid this, such as the use of the scan path to quickly clock the state in and out to/from memory.
 Digital signal processing, however, would not need this as it is data dependent. 
 Processors with cache have a large amount of state data, so state retention registers are needed here.
@@ -108,15 +108,15 @@ Fine grain gating is where individual cells (e.g. in ASIC) have their own gating
 Coarse grain techniques are where gating transistors are applied on a larger module scale.
 \cite{nair2009comparative} compares the fine grain and coarse grain methods on a 65nm FPGA technology. 
 Here, a SRAM block is used as the test circuit. 
-Fine grain, in this case, is where the memory of each cell is individually gated, and coarse is where a $16 \times 1$ SRAM module is gated. 
+Fine grain, in this case, is where the memory of each cell is individually gated, and coarse grain is where a $16 \times 1$ SRAM module is gated. 
 It was conclusively shown that coarse grain gating reduced power consumption more than fine grain due to being able to turn off the read/write circuitry. 
 
 
 %Multi sleep mode
 When deciding to sleep a module, there are a number of overheads.
-Due to the charging / discharging of the gated circuit (depending on the use of header or footer switches), when the circuit is re-enabled, there is an amount of time needed to allow the capacitors to return to normal \cite{abdollahi2005effective}.
-This is referred to as the wake-up time and can also include the time to restore state if applicable.
-The (dis)charging can also poses ground bounce issues to the device due to the sudden draw of current, \cite{kim2003understanding,chang1997analysis}. 
+Due to the charging / discharging of the gated circuit (depending on the use of header or footer switches), when the circuit is re-enabled there is an amount of time needed to allow the capacitors to return to normal \cite{abdollahi2005effective}.
+This is referred to as the wake-up time and can also include the time to restore state, if applicable.
+The (dis)charging can also pose ground bounce issues to the device due to the sudden draw of current \cite{kim2003understanding,chang1997analysis}. 
 
 This wake up time can then impact the performance of the device - if more energy is consumed waiting for the disabled module than it would have consumed being awake, the overall power is not reduced.
 \cite{kim2004experimental} discusses a method where an intermediate power saving mode is introduced.
@@ -126,9 +126,10 @@ Table \ref{tab:kim} summarises the states of the transistors in the circuit in f
 
 The RUN and COLD states operate as previously discussed. 
 The PARK state, however, is where the virtual ground voltage does not rise to $V_{dd}$ due to the PMOS conducting. 
-The virtual ground is at the threshold voltage of the PMOS, so the leakage current is less than in the RUN state, but not so high that state retention is needed. 
+The virtual ground is at the threshold voltage of the PMOS, so the leakage current is less than in the RUN state but not so high that state retention is needed. 
 This drastically reduces the wake up overhead of the circuit. 
-
+\todo[inline]{consistency of wake up / wake-up}
+\todo[inline]{- replaced by : in some places too}
 \begin{figure}
 \centering
 %\missingfigure{\cite{kim2004experimental} power states circuit}
@@ -156,7 +157,7 @@ In general, the closer the virtual ground is to ground, the more leakage current
 
 Sub Clock Power Gating employs the same basic idea, but in a different manner \cite{mistry2011sub}.
 This technique reduces the leakage power of a circuit during the active state of the module.
-It utilises the fact that the combinational logic is not used for half the clock cycle in synchronous circuits.
+It utilises the fact that the combinational logic is not used for half of the clock cycle in synchronous circuits.
 The combinational logic blocks can then be gated for half of the clock cycle.
 The result is that the combinational logic is turned off regularly. 
 The timings of the signals are seen in figure~\ref{fig:scpg:timing}.
@@ -168,18 +169,19 @@ The timings of the signals are seen in figure~\ref{fig:scpg:timing}.
 \label{fig:scpg:timing}
 \end{figure}
 
+\todo[inline]{Figure / figure}
 
 As this method only affects the combinational blocks, the sequential registers are not gated.
 This results in no need for state retention registers.
 Also, due to the reliance on the clock for the gating, the power management module is reduced to a combinational function depending on the clock. 
 This logic can be seen in figure~\ref{fig:scpg:gate}. 
-The isolation circuit also needs to be dependant on the clock.
+The isolation circuit also needs to be dependent on the clock.
 This is seen in Figure~\ref{fig:scpg:iso}.
 This circuit is needed to isolate during the high period of the clock. 
 It also must assert the isolate signal until the combinational logic block is recharged. 
 The isolation signal must be high when Virtual $V_{dd}$ is low and the clock is low, or when the clock is high. 
 
-\todo[inline]{Could be better to have the isolation / gating circuit instead of the clock gating with AND gate.}s
+\todo[inline]{Could be better to have the isolation / gating circuit instead of the clock gating with AND gate.}
 \begin{figure}
 %\missingfigure{The power gating circuit from \cite{mistry2011sub}.}
 \includegraphics[width=0.4\textwidth]{Figures/mistry_gating.pdf}%scpg_circuit.png}

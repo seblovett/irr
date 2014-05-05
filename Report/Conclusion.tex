@@ -1,27 +1,28 @@
 %  Conclusion.tex
 %  Document created by seblovett on seblovett-Ubuntu
 %  Date created: Sat 22 Mar 2014 14:41:26 GMT
-%  <+Last Edited: Thu 17 Apr 2014 12:37:00 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Mon 05 May 2014 12:20:58 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Conclusion}
 
 Three areas of power saving techniques have been discussed. 
 Firstly, clock gating is a method to reduce the dynamic power of a module. 
 This is done by disabling the clock meaning that the state, and therefore the internal signals, do not switch. 
-This saves a lot of dynamic power as when the module is not in use, no switching occurs. 
+This saves a lot of dynamic power as, when the module is not in use, no switching occurs. 
 Clock gating requires little hardware to implement in principle. 
 However, the gating functions can be large and sometimes consume more power than they save. 
 A number of methods to solve this issue exist and provide good solutions.
 
 
 Power gating is a technique to minimise leakage power.
-The basic principle is simple - addition of a MOS transistor between the circuit and the module is added to turn off the power.
+The basic principle is simple: a MOS transistor between the circuit and the module is added to turn off the power.
 However, many issues arise, such as the need for isolation, state retention and a power manager.
 Though the isolation and state retention are easily solved, they increase the size of the module. 
 Some methods, such as using the scan path to quickly clock the state in and out, are suggested to speed up the process of state retention. 
 
-The power management poses this issue of when to sleep. 
-Sleeping requires an overhead of time, and therefore energy, to do so. 
+%The power management poses this issue of when to sleep. 
+The main issue is when to put the module to sleep.
+Sleeping requires an overhead of time and, therefore, energy. 
 By implementing multiple sleep states, a compromise between wake up time and leakage power saving can be made. 
 This is more flexible for the power manager, so sleep states can be utilised more often, thereby saving energy.
 
@@ -41,7 +42,7 @@ This is a promising technique with large energy savings.
 Other low power design methods exist. 
 Most provide a form of compromise between power and performance, and others exist which help give a better solution to this trade off. 
 One new technique which has a very low energy but low performance is the ARM near threshold processor \cite{arm:nearthresh}. 
-This technique should suit very low power applications very well. 
+This technique would suit very low power applications.
 
 In conclusion, there are many methods of low power design. 
 Two main areas exist for energy waste - dynamic and leakage. 
