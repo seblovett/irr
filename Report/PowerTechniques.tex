@@ -1,7 +1,7 @@
 %  PowerDomains.tex
 %  Document created by seblovett on seblovett-NETBOOK
 %  Date created: Wed 19 Feb 2014 11:26:11 GMT
-%  <+Last Edited: Tue 06 May 2014 19:36:44 BST by seblovett on seblovett-Ubuntu +>
+%  <+Last Edited: Tue 06 May 2014 21:19:35 BST by seblovett on seblovett-Ubuntu +>
 
 \section{Power Techniques}
 \subsection{Power Gating}
@@ -43,7 +43,7 @@ Figure \ref{fig:powerswitches} shows the realisation of the power gating circuit
 \subfloat[Header PMOS transistor]{\includegraphics{Figures/powergating_switches_header.pdf}}~
 \subfloat[Footer NMOS transistor]{\includegraphics{Figures/powergating_switches_footer.pdf}}
 \caption{Circuit diagram showing the use of power gating transistors.}%footer switches (left) or header switches (right).}
-\todo[inline]{Break this into two subfigures}
+%\todo[inline]{Break this into two subfigures}
 \label{fig:powerswitches}
 \end{figure}
 
@@ -90,7 +90,7 @@ Digital signal processing, however, would not need this as it is data dependent.
 Processors with cache have a large amount of state data, so state retention registers are needed here.
 
 When footer switches are used, the voltage that at the source of the NMOS is known as the virtual ground (VGND). When the footer is active, VGND $\approx$ GND. When off, VGND $\approx V_{dd}$.
-A full realisation of a power gated circuit is shown in figure \ref{fig:powergated}. 
+A full realisation of a power gated circuit is shown in Figure \ref{fig:powergated}. 
 
 
 \begin{figure}
@@ -115,21 +115,21 @@ It was conclusively shown that coarse grain gating reduced power consumption mor
 %Multi sleep mode
 When deciding to sleep a module, there are a number of overheads.
 Due to the charging / discharging of the gated circuit (depending on the use of header or footer switches), when the circuit is re-enabled there is an amount of time needed to allow the capacitors to return to normal \cite{abdollahi2005effective}.
-This is referred to as the wake-up time and can also include the time to restore state, if applicable.
+This is referred to as the wake up time and can also include the time to restore state, if applicable.
 The (dis)charging can also pose ground bounce issues to the device due to the sudden draw of current \cite{kim2003understanding,chang1997analysis}. 
 
 This wake up time can then impact the performance of the device - if more energy is consumed waiting for the disabled module than it would have consumed being awake, the overall power is not reduced.
 \cite{kim2004experimental} discusses a method where an intermediate power saving mode is introduced.
 This is done by using a standard footer power gating NMOS. 
 An extra PMOS is then added in parallel with the power gating switch. 
-Table \ref{tab:kim} summarises the states of the transistors in the circuit in figure \ref{fig:kim}
+Table \ref{tab:kim} summarises the states of the transistors in the circuit in Figure \ref{fig:kim}
 
 The RUN and COLD states operate as previously discussed. 
 The PARK state, however, is where the virtual ground voltage does not rise to $V_{dd}$ due to the PMOS conducting. 
 The virtual ground is at the threshold voltage of the PMOS, so the leakage current is less than in the RUN state but not so high that state retention is needed. 
 This drastically reduces the wake up overhead of the circuit. 
-\todo[inline]{consistency of wake up / wake-up}
-\todo[inline]{- replaced by : in some places too}
+%\todo[inline]{consistency of wake up / wake-up}
+%\todo[inline]{- replaced by : in some places too}
 \begin{figure}
 \centering
 %\missingfigure{\cite{kim2004experimental} power states circuit}
@@ -160,7 +160,7 @@ This technique reduces the leakage power of a circuit during the active state of
 It utilises the fact that the combinational logic is not used for half of the clock cycle in synchronous circuits.
 The combinational logic blocks can then be gated for half of the clock cycle.
 The result is that the combinational logic is turned off regularly. 
-The timings of the signals are seen in figure~\ref{fig:scpg:timing}.
+The timings of the signals are seen in Figure~\ref{fig:scpg:timing}.
 
 \begin{figure}
 %\missingfigure{The power gating timing from \cite{mistry2011sub}.}
@@ -169,24 +169,24 @@ The timings of the signals are seen in figure~\ref{fig:scpg:timing}.
 \label{fig:scpg:timing}
 \end{figure}
 
-\todo[inline]{Figure / figure}
+%\todo[inline]{Figure / figure}
 
 As this method only affects the combinational blocks, the sequential registers are not gated.
 This results in no need for state retention registers.
 Also, due to the reliance on the clock for the gating, the power management module is reduced to a combinational function depending on the clock. 
-This logic can be seen in figure~\ref{fig:scpg:gate}. 
+This logic can be seen in Figure~\ref{fig:scpg:gate}. 
 The isolation circuit also needs to be dependent on the clock.
 This is seen in Figure~\ref{fig:scpg:iso}.
 This circuit is needed to isolate during the high period of the clock. 
 It also must assert the isolate signal until the combinational logic block is recharged. 
 The isolation signal must be high when Virtual $V_{dd}$ is low and the clock is low, or when the clock is high. 
 
-\todo[inline]{Could be better to have the isolation / gating circuit instead of the clock gating with AND gate.}
+%\todo[inline]{Could be better to have the isolation / gating circuit instead of the clock gating with AND gate.}
 \begin{figure}
 %\missingfigure{The power gating circuit from \cite{mistry2011sub}.}
 \includegraphics[width=0.4\textwidth]{Figures/mistry_gating.pdf}%scpg_circuit.png}
 \caption{The power management circuitry needed to implement Sub Clock Power Gating. Reproduced from \cite{mistry2011sub}}
-\todo[inline]{redo this. Add isolation circuit too}
+%\todo[inline]{redo this. Add isolation circuit too}
 \label{fig:scpg:gate}
 \end{figure}
 \begin{figure}
